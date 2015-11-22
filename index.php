@@ -47,7 +47,7 @@ and open the template in the editor.
 		</div>
 	</div>
         <?php
-         echo 
+         echo "<script>alert('success')</script>"
         ?>
     </body>
     <script src="index.js"></script>
