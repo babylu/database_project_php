@@ -1,26 +1,26 @@
 body{
-	width:960px;
-	position:relative;
-	margin:auto;
-	background-color:#bebdbf;
+    width:960px;
+    position:relative;
+    margin:auto;
+    background-color:#bebdbf;
 }
 
 .mainPart{
-	width:960px;
-	background-color:#ffffff;
+    width:960px;
+    background-color:#ffffff;
 	
 }
 .header {
-	color:#000000;
-	text-align:center;
-	font-weight:bold;
+    color:#000000;
+    text-align:center;
+    font-weight:bold;
     padding-top:30px;
 }
 
 .footer{
-	width:960px;
-	text-align:center;
-	font-size:16px;
+    width:960px;
+    text-align:center;
+    font-size:16px;
     border-top: solid grey 1px;
     padding-top: 10px;
     margin-bottom: 0px;
@@ -28,31 +28,36 @@ body{
     
 }
 .title{
-	font-size:30px;
-	font-weight:bold;
-	text-align:center;
-	width:400px;
-	padding-bottom:20px;
+    font-size:30px;
+    font-weight:bold;
+    text-align:center;
+    width:400px;
+    padding-bottom:20px;
     margin-left: 191px;
     
 }
 
 .option{
-	display:inline;
-	padding-right: 30px;
-	float:right;
-    width: 156px;
+    display:inline;
+    padding-right: 30px;
+    float:right;
+    width: 180px;
     height: 104px;
 }
 
 .username{
     line-height: 52px;
     font-size: 20px;
+    cursor:pointer;
 }
 .option input{
-	height:25px;
-	width:150px;
-	margin-top:10px;
+    height:25px;
+    width:150px;
+    margin-top:10px;
+}
+.option img{
+    position:absolute;
+    margin:17px 0 0 2px;
 }
 /******** Menu ********/
 .menu {
@@ -79,11 +84,11 @@ body{
    
 }
 .menu li a {
-	text-align: center;
-	display: inline-block;
-	padding: 10px 24px 11px;
-	position: relative;
-	color: #fff;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 24px 11px;
+    position: relative;
+    color: #fff;
     text-decoration:none;
 }
 .menu li:hover {
