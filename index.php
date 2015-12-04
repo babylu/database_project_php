@@ -17,7 +17,7 @@ and open the template in the editor.
 		<div class="header">
 			<img class="title" src="./img/title.jpg">
 			<div class="option">
-				<div id="username" class="username">Login/register</div>
+                            <a href="./web/index.html">Login/registered</a>
 				<input id="searchInput" type="text" value="search">
 				<img id="searchIcon" src="./img/searchIcon20.jpeg">
 			</div>
@@ -46,9 +46,7 @@ and open the template in the editor.
 			<div>PHONE: 412-***-****</div>
 		</div>
 	</div>
-        <?php
-         echo "<script>alert('success')</script>"
-        ?>
+        
     </body>
     <script src="index.js"></script>
 </html>
