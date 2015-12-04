@@ -18,7 +18,7 @@ and open the template in the editor.
 		<div class="header">
 			<img class="title" src="./img/title.jpg">
 			<div class="option">
-				<div id="username" class="username">Login/register</div>
+				<a id="username" class="username" href="./html/login.html">Login/register</div>
 				<input id="searchInput" type="text" value="search">
 				<img id="searchIcon" src="./img/searchIcon20.jpeg">
 			</div>
