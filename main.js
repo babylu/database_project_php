@@ -7,8 +7,7 @@ $(function(){
                 width: 700,
                 zIndex: 5000,
                 closeOnEscape:true,
-                draggable:true,
-                autoOpen: false,
+                position: ['center','center'],
                 open: function () {
                     $('.ui-dialog-titlebar-close').parent().hide();
 //                    $('.ui-dialog').unbind('focus');

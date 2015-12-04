@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello World!</title>
+<script type="text/javascript" src="../jquery-2.1.4.js"></script>
+<link rel="stylesheet" href="../css/common.css" type="text/css">
+<link rel="stylesheet" href="../css/pageIndex.css" type="text/css">
+<link rel="stylesheet" href="../css/register.css" type="text/css">
+</head>
+<body>
+    <div class="mainPart">
+        <div class="header">
+            <img class="title" style="margin-left: 0" alt="title" src="../img/title.jpg">
+        </div>
+        <div style="height: 560px;">
+            <form id="registerInfo" class="registerTable">
+                <div>
+                    <label>username: </label>
+                    <input type="text" name="username">
+                </div>
+                <div>
+                    <label>Name: </label>
+                    <input type="text" name="name">
+                </div>
+                <div>
+                    <label>Address: </label>
+                    <input type="text" name="address">
+                </div>
+                <div>
+                    <label>User Type: </label>
+                    <div class="radio" style="margin-top: 0;margin-bottom: 0;">
+                        <input type="radio" name="type" value="home">Home
+                        <input type="radio" name="type" value="business">Business
+                    </div>
+                </div>
+                <div id="business">
+                    <div>
+                        <label>Category: </label>
+                        <input type="text" name="category">
+                    </div>
+                    <div>
+                        <label>Annual Income: </label>
+                        <input type="text" name="annualIncome">
+                    </div>
+                </div>
+                <div id="home">
+                    <div>
+                        <label>Marriage Statue: </label>
+                        <div class="radio" style="margin-top: 0;margin-bottom: 0;">
+                            <input type="radio" name="marriageStatue" value="married">Married
+                            <input type="radio" name="marriageStatue" value="single">Single
+                        </div>
+                    </div>
+                    <div>
+                        <label>Gender: </label>
+                        <div class="radio" style="margin-top: 0;margin-bottom: 0;">
+                            <input type="radio" name="gender" value="Female">Female
+                            <input type="radio" name="gender" value="Male">Male
+                        </div>
+                    </div>
+                    <div>
+                        <label>Age: </label>
+                        <input type="text" name="age">
+                    </div>
+                    <div>
+                        <label>Income: </label>
+                        <input type="text" name="income">
+                    </div>
+                </div>
+            </form>
+            <button id="registerSubmit">REGISTER</button>
+        </div>
+        <div class="footer">
+            <div>Copyright &copy; Delicious Dessert Inc. All Right Reserved.</div>
+            <div>ADDRESS: </div>
+            <div>EMAIL: DeliciousDessertInc@gmail.com</div>
+            <div>PHONE: 412-***-****</div>
+        </div>
+    </div>
+    <?php
+
+    ?>
+</body>
+</html>
