@@ -92,7 +92,7 @@ body{
     text-decoration:none;
 }
 .menu li:hover {
-    background-color:#bcbcbc;
+    background-color:#eecaf0;
     display: inline-block;
     float: none;
     font-size: 25px;
