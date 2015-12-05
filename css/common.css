@@ -2,7 +2,7 @@ body{
     width:960px;
     position:relative;
     margin:auto;
-    background-color:#fdf6fd;
+    background-image: url("../img/background.jpg");
 }
 
 .mainPart{
@@ -106,16 +106,28 @@ body{
 
 
 /**********Item Page***********/
+fieldset{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 900px;
+    border-color: 
+}
+legend{
+    font-family: Edwardian Script ITC;
+    font-size: 50px;
+    color: #f3b1cd;
+    font-weight: bold;
+}
 .itemShowTable{
     margin-top: 20px;
     margin-bottom: 30px;
     
 }
 .itemShowTable td{
-    width: 100px;
+    width: 150px;
     height: 30px;
 }
 .itemShowTable th{
-    width: 100px;
+    width: 150px;
     height: 50px;
 }

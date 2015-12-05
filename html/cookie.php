@@ -31,10 +31,7 @@ and open the template in the editor.
         </div>
         <div class="body">
             <center>
-                <fieldset form="iceCreamList">
-                    <legend>Ice Cream</legend>
-                    <>
-                </fieldset>
+                cookie
             </center>
         </div>
 
