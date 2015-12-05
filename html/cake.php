@@ -52,35 +52,31 @@ and open the template in the editor.
                                 <th>Price</th>
                                 <th>Buy Number</th>
                             </tr>
-                            <tr>
-                                <td>Häagen-Dazs Vanilla</td>
-                                <td>100</td>
-                                <td>$5.99</td>
-                                <td>
-                                    <input type="text">
+                            <?php
+               $con = mysql_connect("localhost","root","root");
+                    if (!$con)
+                       {
+                die('Could not connect: ' . mysql_error());
+                    }
+
+                    mysql_select_db("e-commerce", $con);
+
+              $result = mysql_query("select product_id, name,  amount, price from product where kind='cake'");
+
+                 while($row = mysql_fetch_array($result))
+                         {
+                 echo"<tr><td>" . htmlentities($row["name"]) . "</td>";
+                 echo"<td>" . htmlentities($row["amount"]) . "</td>";
+                 echo"<td>" . htmlentities($row["price"]) . "</td>";
+                  echo"<td>
+                                    <input type='text'>
                                     <button>Buy</button>
-                                </td>
-                                
-                            </tr>
-                            <tr>
-                                <td>Häagen-Dazs Pineapple and Coconut</td>
-                                <td>100</td>
-                                <td>$4.89</td>
-                                <td>
-                                    <input type="text">
-                                    <button>Buy</button>
-                                </td>
-                                
-                            </tr>
-                            <tr>
-                                <td>Häagen-Dazs Cherry</td>
-                                <td>100</td>
-                                <td>$5.89</td>
-                                <td>
-                                    <input type="text">
-                                    <button>Buy</button>
-                                </td>
-                            </tr>
+                                </td> ";           
+                 echo "</tr>";
+                          }
+
+                      mysql_close($con);
+                             ?>        
                     </table>
                 </fieldset>
             </center>

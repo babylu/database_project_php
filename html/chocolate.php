@@ -44,44 +44,51 @@ and open the template in the editor.
                         </select>
                         <label>Entities</label> 
                     </div>
-                    <table class="itemShowTable">
+                    <table class="itemShowTable" id="dataTables-1">
                         <!--when use php to generate this table, please ask Emily to do control of word length-->
-                            <tr>
+                           
+                        <tr>
                                 <th>Item Name</th>
                                 <th>Stock</th>
                                 <th>Price</th>
                                 <th>Buy Number</th>
                             </tr>
-                            <tr>
-                                <td>Häagen-Dazs Vanilla</td>
-                                <td>100</td>
-                                <td>$5.99</td>
-                                <td>
-                                    <input type="text">
+                           <tbody>
+                                <?php
+               $con = mysql_connect("localhost","root","root");
+                    if (!$con)
+                       {
+                die('Could not connect: ' . mysql_error());
+                    }
+
+                    mysql_select_db("e-commerce", $con);
+
+              $result = mysql_query("select product_id, name,  amount, price from product where kind='chocolate'");
+
+                 while($row = mysql_fetch_array($result))
+                         {
+                 echo"<tr><td>" . htmlentities($row["name"]) . "</td>";
+                 echo"<td>" . htmlentities($row["amount"]) . "</td>";
+                 echo"<td>" . htmlentities($row["price"]) . "</td>";
+                  echo"<td>
+                                    <input type='text'>
                                     <button>Buy</button>
-                                </td>
-                                
-                            </tr>
-                            <tr>
-                                <td>Häagen-Dazs Pineapple and Coconut</td>
-                                <td>100</td>
-                                <td>$4.89</td>
-                                <td>
-                                    <input type="text">
-                                    <button>Buy</button>
-                                </td>
-                                
-                            </tr>
-                            <tr>
-                                <td>Häagen-Dazs Cherry</td>
-                                <td>100</td>
-                                <td>$5.89</td>
-                                <td>
-                                    <input type="text">
-                                    <button>Buy</button>
-                                </td>
-                            </tr>
+                                </td> ";           
+                 echo "</tr>";
+                          }
+
+                      mysql_close($con);
+                             ?>                        
+                            </tbody>
+                   
                     </table>
+                    <script>
+                            $(function(){
+                                $('#dataTables-1').dataTable( {
+                                    "bProcessing": true,
+                                } );
+                            });
+                        </script>
                 </fieldset>
             </center>
         </div>
@@ -93,9 +100,7 @@ and open the template in the editor.
             <div>PHONE: 412-***-****</div>
         </div>
     </div>
-    <?php
-
-    ?>
+    
 </body>
 </html>
 

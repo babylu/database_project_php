@@ -23,7 +23,8 @@ $sql1 .="INSERT INTO business (customer_id,category,gross_income)
 
     if($_POST[type]==home){
         if (mysqli_multi_query($con, $sql)) {  
- echo "<script>alert('register success')</script>";     
+ echo "<script>alert('register success')</script>";
+ echo "<script>window.location.href = 'http://localhost:8888/PhpProject1/index.html'</script>";
         ;      
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($con);
@@ -33,7 +34,7 @@ $sql1 .="INSERT INTO business (customer_id,category,gross_income)
     
     if (mysqli_multi_query($con, $sql1)) { 
         echo "<script>alert('register success')</script>";
-          
+        echo "<script>window.location.href = 'http://localhost:8888/PhpProject1/index.html'</script>"; 
               
 } else {
            echo  "Error: " . $sql1 . "<br>" . mysqli_error($con);

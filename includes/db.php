@@ -505,8 +505,8 @@ class db extends mysqli {
         return $this->query($sql);
     }
     
-    public function view_product_Eyeshadow (){
-        $sql = "select P.ProductID, Name, ProductType, Inventory, Base_Price, ImageFile from Product P where Category='Eyeshadow'";
+    public function view_product_chocolate (){
+        $sql = "select product_id, name,  amount, price from product where kind='chocolate'";
         return $this->query($sql);
     }
     
