@@ -30,7 +30,7 @@ and open the template in the editor.
                 <li><a href="adminStock.php">Inventory</a></li>
                 <li><a href="adminDetail.php">Sales Status</a></li>
                 <li><a href="adminStatistic.php">Statistic</a></li>
-                <li><a href="editEmployee.php">Edit Employee</a></li>
+                
                 
             </ul>
             </div>
@@ -43,8 +43,8 @@ and open the template in the editor.
    
                 <label style="margin-left: 15px;">Find store information</label>
                                 <div class="searchStore" >
-                                    <input type="text" name="store_id" value="" placeholder=" type store ID" style="margin: 15px;height: 20px;">
-                                    <button>Search </button>
+                                    <input type="text" name="store_id" value="" placeholder=" Type store ID" >
+                                    <button class="buttonStyle">Search </button>
                                 </div>
                     
              
@@ -109,7 +109,7 @@ and open the template in the editor.
    
                 <label style="margin-left: 15px;">Find store information</label>
                                 <div class="searchRegion" >
-                                    <input type="text" name="region_name" value="" placeholder=" type region name" style="margin: 15px;height: 20px;">
+                                    <input type="text" name="region_name" value="" placeholder=" type region name" >
                                     <button>Search </button>
                                 </div>
                     

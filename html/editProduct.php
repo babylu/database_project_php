@@ -33,6 +33,7 @@ and open the template in the editor.
                 <li><a href="adminDetail.php">Sales Status</a></li>
                 <li><a href="adminStatistic.php">Statistic</a></li>
                 <li><a href="editEmployee.php">Edit Employee</a></li>
+                <li><a href="editProduct.php">Edit Product</a></li>
                 
             </ul>
             </div>
@@ -40,38 +41,48 @@ and open the template in the editor.
             <div class="right">
                 <div id="navHead" class="navHead" style="display:block">Add / Delete / Modify Employee Info</div>
                 <div class="showTable">
-                <form name="getemployee" action="edit_salesman.php" method="POST">
-                            
-                    <label>Email:</label>           
-                    <input type="email" name="salesman_email" value=""></br>
-
+                     <fieldset>
+                         <center>
+                <form name="getemployee" action="editEmployee.php" method="POST">
+                    <table class="viewTable">
+                        <tr>
+                            <td>
+                                <label>Email:</label>           
+                                <input type="email" name="salesman_email" value=""></br>
+                            </td>
+                            <td>
                                 <label>Name:</label>
                                 <input type="text" name="salesman_name" value=""></br>
-                                
-                                    
-                                
+                            </td>
+                            <td>
                                 <label>Street:</label>
                                 <input type="text" name="street" value=""></br>
-                                    
-                             
+                            </td>
+                                </tr>
+                                <tr>
+                                    <td>
                                 <label>City:</label>
-                                
                                 <input type="text" name="city" value=""></br>
-                                    
-                                
+                                    </td>
+                                    <td>
                                 <label>State:</label>
-                                <input type="text" name="state" value=""></br>
-                                  
+                                <input type="text" name="state" value=""></br> 
+                                    </td>
+                                    <td>
                                 <label>Zip Code:</label>
                                 <input type="text" name="zipcode" value=""></br>
-
-                                <label>Email:</label>
-                                <input type="text" name="email" value=""></br>
-
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                <label>Job Title:</label>
+                                <input type="text" name="jobTitle" value=""></br>
+                                    </td>
+                                    <td>
                                 <label>Salary:</label>
-                                <input type="text" name="salary" value=""></br>
-                                    
-                                </div>
+                                <input type="text" name="salary" value=""></br> 
+                                    </td>
+                                    <td>
                                 <label>Store ID:</label>
                                     <select name="store_id">
                                         <option><?php echo $salesman['Assigned_Store']; ?></option>
@@ -85,15 +96,19 @@ and open the template in the editor.
                                             }
                                         ?>
                                     </select>
-                                </div>
+                                    </td>
+                                </tr>
+                    </table>    
+                                <input type="submit" value="Save changes" class="buttonStyle">
+                                
       
-                                <input type="submit" value="Save changes">
-                                <?php
-                                    if($IsEmpty)
-                                    echo "Please fill the blank<br/>";
-                                ?>
+                            
                             
                         </form>
+                             </center>
+                   </fieldset>
+                </div>
+                </div>
                     </div>
             </div>
 
@@ -111,4 +126,6 @@ and open the template in the editor.
     </div>
 </body>
 </html>
+
+
 
