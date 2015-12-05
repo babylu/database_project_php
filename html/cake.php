@@ -30,7 +30,14 @@ and open the template in the editor.
             </ul>
         </div>
         <div class="body">
-            cake
+            <center>
+                <fieldset form="iceCreamList">
+                    <legend>Cake</legend>
+                    <table>
+                        
+                    </table>
+                </fieldset>
+            </center>
         </div>
 
         <div class="footer">

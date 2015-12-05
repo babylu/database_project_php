@@ -30,12 +30,19 @@ and open the template in the editor.
             </ul>
         </div>
         <div class="body">
-            chocolate
+            <center>
+                <fieldset form="iceCreamList">
+                    <legend>Chocolate</legend>
+                    <table>
+                        
+                    </table>
+                </fieldset>
+            </center>
         </div>
 
         <div class="footer">
             <div>Copyright &copy; Delicious Dessert Inc. All Right Reserved.</div>
-            <div>ADDRESS: </div>
+            <div>ADDRESS: 4200 Fifth Ave, Pittsburgh, PA 15213</div>
             <div>EMAIL: DeliciousDessertInc@gmail.com</div>
             <div>PHONE: 412-***-****</div>
         </div>

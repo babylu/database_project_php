@@ -33,14 +33,62 @@ and open the template in the editor.
             <center>
                 <fieldset form="iceCreamList">
                     <legend>Ice Cream</legend>
-                    <>
+                    <div class="quantity">
+                        <label>Show</label> 
+                        <select id="showQuantity">
+                            <option value ="10">10</option>
+                            <option value ="20">20</option>
+                            <option value="30">30</option>
+                        </select>
+                        <label>Entities</label> 
+                    </div>
+                    <center>
+                        <table class="itemShowTable">
+<!--when use php to generate this table, please ask Emily to do control of word length-->
+                            <tr>
+                                <th>Item Name</th>
+                                <th>Stock</th>
+                                <th>Price</th>
+                                <th>Buy Number</th>
+                            </tr>
+                            <tr>
+                                <td>Häagen-Dazs Vanilla</th>
+                                <td>100</th>
+                                <td>$5.99</th>
+                                <td>
+                                    <input type="text">
+                                    <button>Buy</button>
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td>Häagen-Dazs Pineapple and Coconut</th>
+                                <td>100</th>
+                                <td>$4.89</th>
+                                <td>
+                                    <input type="text">
+                                    <button>Buy</button>
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td>Häagen-Dazs Cherry</th>
+                                <td>100</th>
+                                <td>$5.89</th>
+                                <td>
+                                    <input type="text">
+                                    <button>Buy</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </center>
                 </fieldset>
             </center>
         </div>
 
         <div class="footer">
             <div>Copyright &copy; Delicious Dessert Inc. All Right Reserved.</div>
-            <div>ADDRESS: </div>
+            <div>ADDRESS: 4200 Fifth Ave, Pittsburgh, PA 15213</div>
             <div>EMAIL: DeliciousDessertInc@gmail.com</div>
             <div>PHONE: 412-***-****</div>
         </div>
