@@ -20,7 +20,7 @@ and open the template in the editor.
             <div class="option">
                 <div id="username" class="username"><a href="logIn.html">Login/register</a></div>
                 <input id="searchInput" type="text" placeholder=" search"style='font-size:13px;'>
-                <img id="searchIcon" alt="searchIcon" src="../img/searchIcon20.jpeg">
+                <img id="searchIcon" alt="searchIcon" src="../img/searchIcon20.jpeg"  onclick="window.location.href='searchResult.php'">
             </div>
             <ul id="menu" class="menu">
                 <li><a href="../index.html">Home</a></li>
@@ -54,9 +54,9 @@ and open the template in the editor.
                                 <th>Buy Number</th>
                             </tr>
                             <tr>
-                                <td>Häagen-Dazs Vanilla</th>
-                                <td>100</th>
-                                <td>$5.99</th>
+                                <td>Häagen-Dazs Vanilla</td>
+                                <td>100</td>
+                                <td>$5.99</td>
                                 <td>
                                     <input type="text">
                                     <button>Buy</button>
@@ -64,9 +64,9 @@ and open the template in the editor.
                                 
                             </tr>
                             <tr>
-                                <td>Häagen-Dazs Pineapple and Coconut</th>
-                                <td>100</th>
-                                <td>$4.89</th>
+                                <td>Häagen-Dazs Pineapple and Coconut</td>
+                                <td>100</td>
+                                <td>$4.89</td>
                                 <td>
                                     <input type="text">
                                     <button>Buy</button>
@@ -74,9 +74,9 @@ and open the template in the editor.
                                 
                             </tr>
                             <tr>
-                                <td>Häagen-Dazs Cherry</th>
-                                <td>100</th>
-                                <td>$5.89</th>
+                                <td>Häagen-Dazs Cherry</td>
+                                <td>100</td>
+                                <td>$5.89</td>
                                 <td>
                                     <input type="text">
                                     <button>Buy</button>
