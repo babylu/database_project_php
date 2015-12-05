@@ -39,19 +39,6 @@ color: #2f889a;
 background-color:#fdf6fd;
 }
 
-
-.left{
-    width:220px;
-    min-height: 700px;
-    float:left;
-    background-color: #fbecfb;
-}
-.right{
-    width:740px;
-    min-height: 700px;
-    float:right;
-    background-color: #fdf6fd;
-}
 .navHead {
     height: 40px;
     width: 740px;
@@ -146,9 +133,6 @@ background-color:#fdf6fd;
 }
 
 .viewTable{
-    
-    
-  
     width:98%;
     border-collapse: collapse;
 }
