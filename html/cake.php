@@ -31,8 +31,8 @@ and open the template in the editor.
         </div>
         <div class="body">
             cake
-        </div>
-
+            </div>
+                                
         <div class="footer">
             <div>Copyright &copy; Delicious Dessert Inc. All Right Reserved.</div>
             <div>ADDRESS: </div>

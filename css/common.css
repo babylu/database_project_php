@@ -56,8 +56,9 @@ body{
     margin-top:10px;
 }
 .option img{
-    position:absolute;
-    margin:17px 0 0 2px;
+    position: absolute; 
+    left:895px;
+    margin:15px 20px 0 0;
 }
 
 
@@ -131,3 +132,9 @@ legend{
     width: 150px;
     height: 50px;
 }
+.category img{
+    cursor: pointer;
+}
+
+
+

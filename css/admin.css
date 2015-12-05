@@ -12,11 +12,11 @@ and open the template in the editor.
 }
 
 .menuAdmin{
-    width:250px;
+    width:220px;
   
 }
 .menuAdmin ul {
-    width:250px;
+    width:220px;
 margin: 0;
 padding: 0;
 
@@ -41,24 +41,25 @@ background-color:#fdf6fd;
 
 
 .left{
-    width:260px;
+    width:220px;
     min-height: 700px;
     float:left;
     background-color: #fbecfb;
 }
 .right{
-    width:700px;
+    width:740px;
     min-height: 700px;
     float:right;
+    background-color: #fdf6fd;
 }
 .navHead {
     height: 40px;
-    width: 700px;
+    width: 740px;
     font-family: sans-serif;
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    
     padding: 10px 0 0 0;
     color: #000;
     background-color: #FFF;
@@ -72,8 +73,50 @@ background-color:#fdf6fd;
 
 .showForm{
     background-color: #fdf6fd;
-    width:680px;
-    margin-left: 5px;
+    width:740px;
+    
     margin-right: 5px;
-    min-height: 300px;
+    padding-bottom: 20px;
+    border-bottom: dotted 1px gray;
 }
+
+/*table styling*/
+
+.quantity{
+    margin: 10px;
+    width:740px;
+    padding-top: 5px;
+    float:left;
+    height:50px;
+    
+}
+.quantity label,.viewTable{
+    font-family: sans-serif;
+    font-size: 18px;
+   
+}
+
+.viewTable{
+    
+    
+    //border: 1px solid pink;
+    width:98%;
+    border-collapse: collapse;
+}
+
+.viewTable th{
+    
+    background-color: #f8cae7;
+    color: #656063;
+    height:40px;
+    width:40px;
+}
+.viewTable td{
+    
+    text-align: center;
+    color: #656063;
+    height:50px;
+   
+}
+
+/*form styling*/

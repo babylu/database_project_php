@@ -20,7 +20,7 @@ and open the template in the editor.
             <div class="option">
                 <div id="username" class="username"><a href="logIn.html">Login/register</a></div>
                 <input id="searchInput" type="text" placeholder=" search"style='font-size:13px;'>
-                <img id="searchIcon" alt="searchIcon" src="../img/searchIcon20.jpeg" onclick="window.location.href='searchResult.php'">
+                <img id="searchIcon" alt="searchIcon" src="../img/searchIcon20.jpeg"  onclick="window.location.href='searchResult.php'">
             </div>
             <ul id="menu" class="menu">
                 <li><a href="../index.html">Home</a></li>
@@ -33,7 +33,7 @@ and open the template in the editor.
         <div class="body">
             <center>
                 <fieldset form="iceCreamList">
-                    <legend>Cookie</legend>
+                    <legend>Search Result</legend>
                     <div class="quantity">
                         <label>Show</label> 
                         <select id="showQuantity">
@@ -48,12 +48,14 @@ and open the template in the editor.
                         <!--when use php to generate this table, please ask Emily to do control of word length-->
                             <tr>
                                 <th>Item Name</th>
+                                <th>Category</th>
                                 <th>Stock</th>
                                 <th>Price</th>
                                 <th>Buy Number</th>
                             </tr>
                             <tr>
                                 <td>Häagen-Dazs Vanilla</td>
+                                <td>Ice Cream</td>
                                 <td>100</td>
                                 <td>$5.99</td>
                                 <td>
@@ -64,16 +66,17 @@ and open the template in the editor.
                             </tr>
                             <tr>
                                 <td>Häagen-Dazs Pineapple and Coconut</td>
+                                <td>Ice Cream</td>
                                 <td>100</td>
                                 <td>$4.89</td>
                                 <td>
                                     <input type="text">
                                     <button>Buy</button>
                                 </td>
-                                
                             </tr>
                             <tr>
                                 <td>Häagen-Dazs Cherry</td>
+                                <td>Ice Cream</td>
                                 <td>100</td>
                                 <td>$5.89</td>
                                 <td>

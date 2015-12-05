@@ -25,17 +25,19 @@ and open the template in the editor.
             <div class="left">
             <div class="menuAdmin">
             <ul>
-                <li><a href="adminEmployee.html">Employee</a></li>
-                <li><a href="adminStore.html">Store & Region</a></li>
-                <li><a href="adminStock.html">Inventory</a></li>
-                <li><a href="adminDetail.html">Sales Status</a></li>
+                <li><a href="adminEmployee.php">Employee</a></li>
+                <li><a href="adminStore.php">Store & Region</a></li>
+                <li><a href="adminStock.php">Inventory</a></li>
+                <li><a href="adminDetail.php">Sales Status</a></li>
+                <li><a href="adminStatistic.php">Statistic</a></li>
+                <li><a href="editEmployee.php">Edit Employee</a></li>
                 
                 
             </ul>
             </div>
             </div>
             <div class="right">
-                <div id="navHead" class="navHead" style="display:block">"Employee Information"</div>
+                <div id="navHead" class="navHead" style="display:block">Employee Information</div>
             
             <div class="search">
                
@@ -49,29 +51,59 @@ and open the template in the editor.
              
             </div>
                 <div class="showForm">
-                    <table class="viewEmpTable">
+                    
+                    
+                    <div class="quantity">
+                        <label>Show</label> 
+                        <select id="showQuantity">
+                            <option value ="10">10</option>
+                            <option value ="20">20</option>
+                            <option value="30">30</option>
+                            <option value="all">all</option>
+                        </select>
+                        <label>Entities</label> 
+                    </div>
+                    <center>
+                        <table class="viewTable">
                             
                             <thead>
                                 <tr>
-                                    <th class="text-left">Name</th>
-                                    <th class="text-left">Email</th>
-                                    <th class="text-left">Street</th>
-                                    <th class="text-left">City</th>
-                                    <th class="text-left">State</th>
-                                    <th class="text-left">Zip Code</th>
-                                    <th class="text-left">Email</th>
-                                    <th class="text-left">Salary</th>
-                                    <th class="text-left">Job Title</th>
-                                    <th class="text-left">Store</th>
+                                    <th >Name</th>
+                                    <th >Email</th>
+                                    <th >Street</th>
+                                    <th >City</th>
+                                    <th >State</th>
+                                    <th >Zip Code</th>
+                                   
+                                    <th >Salary</th>
+                                    <th >Job Title</th>
+                                    <th >Store</th>
                                     
                                 </tr>
                             </thead>
+                            <tr>
+                                <td>Xiyi Li</td>
+                                <td>xil129@pitt.edu</td>
+                                <td>3162 bohem street</td>
+                                <td>Pittsburgh</td>
+                                <td>PA</td>
+                                <td>15213</td>
+                             
+                                <td>$1234</td>
+                                <td>Student</td>
+                                <td>Pittsburgh Area</td>
+                                
+                            </tr>
                             <tbody>    
                                 
                                 
                                 
                             </tbody>
                         </table>
+                        
+                    </center>
+                
+                    
                 </div>
 </div>
         <div class="footer">

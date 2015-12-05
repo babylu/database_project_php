@@ -10,6 +10,7 @@ and open the template in the editor.
 <title>Ice Cream</title>
 <script type="text/javascript" src="../jquery-2.1.4.js"></script>
 <link rel="stylesheet" href="../css/common.css" type="text/css">
+<link rel="stylesheet" href="../css/itemCommon.css" type="text/css">
 <link rel="stylesheet" href="../css/pageIndex.css" type="text/css">
 </head>
 <body>
@@ -19,7 +20,7 @@ and open the template in the editor.
             <div class="option">
                 <div id="username" class="username"><a href="logIn.html">Login/register</a></div>
                 <input id="searchInput" type="text" placeholder=" search"style='font-size:13px;'>
-                <img id="searchIcon" alt="searchIcon" src="../img/searchIcon20.jpeg">
+                <img id="searchIcon" alt="searchIcon" src="../img/searchIcon20.jpeg" onclick="window.location.href='searchResult.php'">
             </div>
             <ul id="menu" class="menu">
                 <li><a href="../index.html">Home</a></li>
@@ -30,12 +31,64 @@ and open the template in the editor.
             </ul>
         </div>
         <div class="body">
-            chocolate
+            <center>
+                <fieldset form="iceCreamList">
+                    <legend>Chocolate</legend>
+                    <div class="quantity">
+                        <label>Show</label> 
+                        <select id="showQuantity">
+                            <option value ="10">10</option>
+                            <option value ="20">20</option>
+                            <option value="30">30</option>
+                            <option value="all">all</option>
+                        </select>
+                        <label>Entities</label> 
+                    </div>
+                    <table class="itemShowTable">
+                        <!--when use php to generate this table, please ask Emily to do control of word length-->
+                            <tr>
+                                <th>Item Name</th>
+                                <th>Stock</th>
+                                <th>Price</th>
+                                <th>Buy Number</th>
+                            </tr>
+                            <tr>
+                                <td>Häagen-Dazs Vanilla</td>
+                                <td>100</td>
+                                <td>$5.99</td>
+                                <td>
+                                    <input type="text">
+                                    <button>Buy</button>
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td>Häagen-Dazs Pineapple and Coconut</td>
+                                <td>100</td>
+                                <td>$4.89</td>
+                                <td>
+                                    <input type="text">
+                                    <button>Buy</button>
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td>Häagen-Dazs Cherry</td>
+                                <td>100</td>
+                                <td>$5.89</td>
+                                <td>
+                                    <input type="text">
+                                    <button>Buy</button>
+                                </td>
+                            </tr>
+                    </table>
+                </fieldset>
+            </center>
         </div>
 
         <div class="footer">
             <div>Copyright &copy; Delicious Dessert Inc. All Right Reserved.</div>
-            <div>ADDRESS: </div>
+            <div>ADDRESS: 4200 Fifth Ave, Pittsburgh, PA 15213</div>
             <div>EMAIL: DeliciousDessertInc@gmail.com</div>
             <div>PHONE: 412-***-****</div>
         </div>

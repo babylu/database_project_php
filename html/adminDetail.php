@@ -25,16 +25,18 @@ and open the template in the editor.
             <div class="left">
             <div class="menuAdmin">
             <ul>
-                <li><a href="adminEmployee.html">Employee Information</a></li>
-                <li><a href="adminStore.html">Store and Region</a></li>
-                <li><a href="adminStock.html">Inventory Information</a></li>
-                <li><a href="adminDetail.html">Detailed Sales Status</a></li>
+                <li><a href="adminEmployee.php">Employee</a></li>
+                <li><a href="adminStore.php">Store & Region</a></li>
+                <li><a href="adminStock.php">Inventory</a></li>
+                <li><a href="adminDetail.php">Sales Status</a></li>
+                <li><a href="adminStatistic.php">Statistic</a></li>
+                <li><a href="editEmployee.php">Edit Employee</a></li>
                 
             </ul>
             </div>
             </div>
             <div class="right">
-                <div id="navHead" class="navHead" style="display:block">"Detailed Sales Status"</div>
+               <div id="navHead" class="navHead" style="display:block">Sales Status</div> 
             </div>
 
         <div class="footer">
