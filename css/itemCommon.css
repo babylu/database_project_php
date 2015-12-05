@@ -1,0 +1,62 @@
+/**********Item Page***********/
+fieldset{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 900px;
+    border: 2px groove #f6c8d3;
+}
+legend{
+    font-family:Zapfino;
+    font-size: 40px;
+    color: #f3b1cd;
+    font-weight: bold;
+}
+.quantity{
+    float:left;
+    margin-left: 20px;
+    font-family: Gabriola;
+    font-size: 30px;
+    font-weight: bold;
+    color:hotpink;
+}
+
+#showQuantity{
+    width: 50px;
+    height: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.itemShowTable{
+    margin-top: 80px;
+    margin-bottom: 30px;
+    width: 800px;
+    font-family: Gabriola;
+
+    
+}
+.itemShowTable td{
+    width: 150px;
+    height: 55px;
+    text-align: center;
+    font-size: 20px;
+
+}
+.itemShowTable th{
+    width: 150px;
+    height: 50px;
+    font-size: 40px;
+    color: hotpink;
+    text-align: center;
+    font-weight:bold;
+}
+
+.itemShowTable input{
+    width: 80px;
+    height: 20px;
+}
+.itemShowTable button{
+    margin-left: 10px;
+    width: 40px;
+    height: 20px;
+}

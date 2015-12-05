@@ -10,6 +10,7 @@ and open the template in the editor.
 <title>Ice Cream</title>
 <script type="text/javascript" src="../jquery-2.1.4.js"></script>
 <link rel="stylesheet" href="../css/common.css" type="text/css">
+<link rel="stylesheet" href="../css/itemCommon.css" type="text/css">
 <link rel="stylesheet" href="../css/pageIndex.css" type="text/css">
 </head>
 <body>
@@ -39,6 +40,7 @@ and open the template in the editor.
                             <option value ="10">10</option>
                             <option value ="20">20</option>
                             <option value="30">30</option>
+                            <option value="all">all</option>
                         </select>
                         <label>Entities</label> 
                     </div>
