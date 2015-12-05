@@ -1,0 +1,67 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 4, 2015, 7:43:38 PM
+    Author     : Ivy
+*/
+.header{
+    border-bottom: dotted 1px gray;
+}
+
+.menuAdmin{
+    width:250px;
+  
+}
+.menuAdmin ul {
+    width:250px;
+margin: 0;
+padding: 0;
+
+list-style-type: none;
+}
+
+.menuAdmin ul li a {
+text-decoration: none;
+color: #2f889a;
+font-size:25px;
+padding: 11.5px 11px;
+  background-color:#fbecfb;
+display:block;
+}
+
+
+.menuAdmin ul li a:hover, .menuAdmin ul li .current {
+    padding-left:10px;
+color: #2f889a;
+background-color:#fdf6fd;
+}
+
+
+.left{
+    width:260px;
+    min-height: 700px;
+    float:left;
+    background-color: #fbecfb;
+}
+.right{
+    width:700px;
+    min-height: 700px;
+    float:right;
+}
+.navHead {
+    height: 40px;
+    width: 700px;
+    font-family: "p22-underground","proxima-nova",Arial,sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 0 0 0;
+    color: #000;
+    background-color: #FFF;
+    border-bottom: #ccc 1px solid;
+    text-align: center;
+}
