@@ -9,7 +9,13 @@
     margin-top: 10px;
     margin-bottom: 20px;
 }
-.registerTable input[type="text"] {
+.registerTable input[type="text"]{
+    width: 150px;
+    height: 25px;
+    margin-left: 10px;
+}
+
+.registerTable input[type="password"] {
     width: 150px;
     height: 25px;
     margin-left: 10px;

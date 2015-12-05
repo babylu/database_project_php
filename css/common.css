@@ -59,6 +59,9 @@ body{
     position:absolute;
     margin:17px 0 0 2px;
 }
+
+
+
 /******** Menu ********/
 .menu {
     width:100%;
@@ -81,7 +84,7 @@ body{
     font-size: 25px;
     line-height: 15px;
     position:relative;
-   
+    cursor: pointer;
 }
 .menu li a {
     text-align: center;
@@ -98,4 +101,21 @@ body{
     font-size: 25px;
     line-height: 15px;
     position:relative;
+}
+
+
+
+/**********Item Page***********/
+.itemShowTable{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    
+}
+.itemShowTable td{
+    width: 100px;
+    height: 30px;
+}
+.itemShowTable th{
+    width: 100px;
+    height: 50px;
 }
