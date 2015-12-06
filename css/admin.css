@@ -187,3 +187,25 @@ background-color:#fdf6fd;
 input[type="text"]{
     text-align: center;
 }
+
+.aggregation{
+    font-family: sans-serif;
+    font-size:25px;
+    color:#656063;
+    margin:10px;
+    
+}
+fieldset{
+    border:dotted 1px gray;
+}
+legend{
+    border:dotted 1px gray;
+}
+
+.aggregation li{
+    list-style-type: square;
+    margin-bottom: 5px;
+}
+.showLabel{
+    color:#e76a81
+}

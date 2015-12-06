@@ -9,6 +9,7 @@ and open the template in the editor.
 <meta charset="UTF-8">
 <title>Ice Cream</title>
 <script type="text/javascript" src="../jquery-2.1.4.js"></script>
+<script type="text/javascript" src="../js/searchItem.js"></script>
 <link rel="stylesheet" href="../css/common.css" type="text/css">
 <link rel="stylesheet" href="../css/itemCommon.css" type="text/css">
 <link rel="stylesheet" href="../css/pageIndex.css" type="text/css">
@@ -45,45 +46,31 @@ and open the template in the editor.
                         <label>Entities</label> 
                     </div>
                     <table class="itemShowTable">
-                        <!--when use php to generate this table, please ask Emily to do control of word length-->
-                            <tr>
-                                <th>Item Name</th>
-                                <th>Category</th>
-                                <th>Stock</th>
-                                <th>Price</th>
-                                <th>Buy Number</th>
-                            </tr>
-                            <tr>
-                                <td>Häagen-Dazs Vanilla</td>
-                                <td>Ice Cream</td>
-                                <td>100</td>
-                                <td>$5.99</td>
-                                <td>
-                                    <input type="text">
-                                    <button>Buy</button>
-                                </td>
-                                
-                            </tr>
-                            <tr>
-                                <td>Häagen-Dazs Pineapple and Coconut</td>
-                                <td>Ice Cream</td>
-                                <td>100</td>
-                                <td>$4.89</td>
-                                <td>
-                                    <input type="text">
-                                    <button>Buy</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Häagen-Dazs Cherry</td>
-                                <td>Ice Cream</td>
-                                <td>100</td>
-                                <td>$5.89</td>
-                                <td>
-                                    <input type="text">
-                                    <button>Buy</button>
-                                </td>
-                            </tr>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Category</th>
+                            <th>Stock</th>
+                            <th>Price</th>
+                            <th>Buy Number</th>
+                        </tr>
+                        <?php
+                            $searchInput = $_SERVER["QUERY_STRING"];
+                            $con = mysql_connect("localhost","root","root");
+                            if (!$con){
+                                die('Could not connect: ' . mysql_error());
+                            }
+                            mysql_select_db("e-commerce", $con);
+                            $result = mysql_query("select * from product where name like '%" . $searchInput . "%'");                           
+                            while($row = mysql_fetch_array($result)){
+                                echo"<tr><td>" . htmlentities($row["name"]) . "</td>";
+                                echo"<td>" . htmlentities($row["kind"]) . "</td>";
+                                echo"<td>" . htmlentities($row["amount"]) . "</td>";
+                                echo"<td>" . htmlentities($row["price"]) . "</td>";
+                                echo"<td><form action='../php/buyProduct.php'><input type='text' name='number'><input type='hidden' name='product_id' value='".htmlentities($row["product_id"])."'><button type='submit'>Buy</button></td>";           
+                                echo "</tr>";
+                            }
+                            mysql_close($con);
+                        ?>
                     </table>
                 </fieldset>
             </center>
