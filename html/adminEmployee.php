@@ -62,7 +62,7 @@ and open the template in the editor.
                             
                             <thead>
                                 <tr>
-                                    <th >Username</th>
+                                    <th >Email</th>
                                     <th >Name</th>
                                     
                                     <th >Street</th>
@@ -78,9 +78,9 @@ and open the template in the editor.
                             </thead>
                             <tr>
                                 
-                                <td>xil129</td>
+                                <td>xil129@pitt.edu</td>
                                 <td>Ivy</td>
-                                <td>3162 bohem street</td>
+                                <td>3162 Bohem ST</td>
                                 <td>Pittsburgh</td>
                                 <td>PA</td>
                                 <td>15213</td>
@@ -111,7 +111,7 @@ and open the template in the editor.
                     <table class="viewTable">
                         <tr>
                             <td>
-                                <label>Username:</label>           
+                                <label>Email:</label>           
                                 <input type="email" name="salesman_email" value=""></br>
                             </td>
                             <td>
@@ -178,11 +178,11 @@ and open the template in the editor.
                     
                     <center>
                         <table class="viewTable">
-                            <form name="getemployee" action="" method="POST">
+                            
                             <thead>
                                 <tr>
+                                    <th >Email</th>
                                     <th >Name</th>
-                                    <th >Username</th>
                                     <th >Street</th>
                                     <th >City</th>
                                     <th >State</th>
@@ -191,35 +191,37 @@ and open the template in the editor.
                                     <th >Salary</th>
                                     <th >Job Title</th>
                                     <th >Store</th>
+                                    <th >Modify</th>
                                     
                                 </tr>
                             </thead>
+                            <form name="modifyEmployee" action="" method="POST">
                             <tr>
                                 <td>
-                                    <label>xil129</label>
+                                    <label>xil129@pitt.edu</label>
                                 </td>
                                 <td>
-                                    <input type="text" value="Ivy" style="width: 30px;">
+                                    <input type="text" value="Ivy" name="name" style="width: 30px;">
                                 </td>
                                 
                                 <td>
-                                    <input type="text" value="3162 Bohem St" style="width: 90px;">
+                                    <input type="text" name="address_street" value="3162 Bohem ST" style="width: 90px;">
                                 </td>
                                 <td>
-                                    <input type="text" value="Pittsburgh" style="width: 60px;">
+                                    <input type="text" name="address_city" value="Pittsburgh" style="width: 60px;">
                                 </td>
                                 <td>
-                                    <input type="text" value="PA" style="width: 20px;">
+                                    <input type="text" name="address_state" value="PA" style="width: 20px;">
                                 </td>
                                 <td>
-                                    <input type="text" value="15213" style="width: 40px;">
+                                    <input type="text" name="address_zipcode" value="15213" style="width: 40px;">
                                 </td>
                              
                                 <td>
-                                    <input type="text" value="$34" style="width: 30px;">
+                                    <input type="text" name="salary" value="$34" style="width: 30px;">
                                 </td>
                                 <td>
-                                    <input type="text" value="Student" style="width: 50px;">
+                                    <input type="text" name="job_title" value="Student" style="width: 50px;">
                                 </td>
                                 <td>
                                
@@ -227,16 +229,19 @@ and open the template in the editor.
                                         <option value ="Pittsburgh Area">Pittsburgh Area</option>
                                     </select>
                                     </td>
+                                    <td>
+                                        <button type="submit" value="change" style="width:50px; height:20px;">change</button>
+                                    </td>
                                 
                                 
                             </tr>
-                            
+                            </form>
                         </table>
-                        <input type="submit" value="Save Changes" class="buttonStyle">
+                        
                        
                     </center>
         
-                 </form>
+                 
                     
                 </div>
 </div>

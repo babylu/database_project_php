@@ -145,7 +145,7 @@ and open the template in the editor.
     <div class="showForm">
                     
                     
-                <form name="addInventory" action="" method="POST">    
+                    
                     <center>
                         <table class="viewTable">
                             
@@ -156,34 +156,39 @@ and open the template in the editor.
                                     <th >Amount</th>
                                     <th >Price</th>
                                     <th >Category</th>
+                                    <th >Modify</th>
                                     
                                     
                                 </tr>
                             </thead>
+                            <form name="addInventory" action="" method="POST">
                             <tr>
                                 <td>
                                     <label>01</label>
                                 </td>
                                 <td>
-                                    <input type="text" value="Cheesecake" style="width: 80px;">
+                                    <input type="text" name="name" value="Cheesecake" style="width: 80px;">
                                 </td>
                                 <td>
-                                    <input type="text" value="10" style="width: 30px;">
+                                    <input type="text" name="amount" value="10" style="width: 30px;">
                                 </td>
                                 <td>
-                                    <input type="text" value="$8" style="width: 30px;">
+                                    <input type="text" name="price" value="$8" style="width: 30px;">
                                 </td>
                                 <td>
-                                    <select name="product_category" style="width:80px;">
+                                    <select name="Category" style="width:80px;">
                                         <option value="cake">Cake</option>
                                     </select>
                                 </td>
-                                
+                                <td>
+                                        <button type="submit" value="change" style="width:50px; height:20px;">change</button>
+                                    </td>
                                 
                             </tr>
+                            </form>
                           
                         </table>
-                        <input type="submit" value="Save Changes" class="buttonStyle">
+                        
                     </center>
                 
     </div>    
