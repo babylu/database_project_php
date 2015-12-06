@@ -37,6 +37,34 @@ and open the template in the editor.
             </div>
             <div class="right">
                <div id="navHead" class="navHead" style="display:block">Sales Status</div> 
+               
+               <div class="aggregation">
+                   <fieldset>
+                       <legend>Aggregation</legend> 
+                       <form>
+<!--         Example for how to show data from database to a label in php
+                                <label for="name"><?php echo $name; ?></label>-->
+                   <ul>
+                   <li>
+                       <strong>Top</strong> profit of the products: 
+                       <label class="showLabel">$8888</label>
+                   </li>
+                   <li>
+                       <strong>Top</strong> product categories:
+                       <label class="showLabel">Cake</label>
+                   </li>
+                   <li>
+                       <strong>Top</strong> region:
+                       <label class="showLabel">Pittsburgh Area</label>
+                   </li>
+                   <li>
+                       <strong>Top</strong> business:
+                       <label class="showLabel">UPMC</label>
+                   </li>
+               </ul>
+               </form>
+                       </fieldset>
+                   </div>
             </div>
 
         <div class="footer">
@@ -49,6 +77,7 @@ and open the template in the editor.
     <?php
 
     ?>
+    </div>
 </body>
 </html>
 
