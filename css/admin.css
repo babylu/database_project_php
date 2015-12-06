@@ -59,7 +59,7 @@ background-color:#fdf6fd;
     font-size: 20px;
     font-weight: 350;
     letter-spacing: 1px;
-    
+    background-color: #fdf6fd;
     padding: 10px 0 0 0;
     color: #000;
     background-color: #FFF;
@@ -172,8 +172,18 @@ background-color:#fdf6fd;
 
 .showTable{
       margin-top: 50px;
+      text-align: right !important;
       
 }
 /*form styling*/
 
+.addform{
+    margin-bottom: 10px;
+}
+.addform input[type="text"]{
+    height:20px;
+}
 
+input[type="text"]{
+    text-align: center;
+}
