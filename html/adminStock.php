@@ -157,7 +157,7 @@ and open the template in the editor.
     <div class="showForm">
                     
                     
-                    
+                <form name="addInventory" action="" method="POST">    
                     <center>
                         <table class="viewTable">
                             
@@ -198,7 +198,7 @@ and open the template in the editor.
                         <input type="submit" value="Save Changes" class="buttonStyle">
                     </center>
                 
-                    
+    </div>    
                 </div>
 </div>
 </div>

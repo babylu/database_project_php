@@ -56,23 +56,15 @@ and open the template in the editor.
                                 </div>
             </div>
                 <div class="showForm">
-                    <div class="quantity">
-                        <label>Show</label> 
-                        <select id="showQuantity">
-                            <option value ="10">10</option>
-                            <option value ="20">20</option>
-                            <option value="30">30</option>
-                            <option value="all">all</option>
-                        </select>
-                        <label>Entities</label> 
-                    </div>
+                    
                     <center>
                         <table class="viewTable">
                             
                             <thead>
                                 <tr>
+                                    <th >Username</th>
                                     <th >Name</th>
-                                    <th >Email</th>
+                                    
                                     <th >Street</th>
                                     <th >City</th>
                                     <th >State</th>
@@ -85,8 +77,9 @@ and open the template in the editor.
                                 </tr>
                             </thead>
                             <tr>
-                                <td>Xiyi Li</td>
+                                
                                 <td>xil129</td>
+                                <td>Ivy</td>
                                 <td>3162 bohem street</td>
                                 <td>Pittsburgh</td>
                                 <td>PA</td>
@@ -114,7 +107,7 @@ and open the template in the editor.
     <div class="showTable">
                      
                          <center>
-                <form name="getemployee" action="editEmployee.php" method="POST">
+                <form name="getemployee" action="" method="POST">
                     <table class="viewTable">
                         <tr>
                             <td>
@@ -185,7 +178,7 @@ and open the template in the editor.
                     
                     <center>
                         <table class="viewTable">
-                            <form name="getemployee" action="editEmployee.php" method="POST">
+                            <form name="getemployee" action="" method="POST">
                             <thead>
                                 <tr>
                                     <th >Name</th>
@@ -210,7 +203,7 @@ and open the template in the editor.
                                 </td>
                                 
                                 <td>
-                                    <input type="text" value="3162 Bohem St" style="width: 80px;">
+                                    <input type="text" value="3162 Bohem St" style="width: 90px;">
                                 </td>
                                 <td>
                                     <input type="text" value="Pittsburgh" style="width: 60px;">
