@@ -64,13 +64,13 @@ body{
 /******** Navigation ********/
 .left{
     width:220px;
-    min-height: 700px;
+    min-height: 900px;
     float:left;
     background-color: #fbecfb;
 }
 .right{
     width:740px;
-    min-height: 700px;
+    min-height: 900px;
     float:right;
     background-color: #fdf6fd;
 }
@@ -95,7 +95,7 @@ body{
     margin:0;
     position: relative;
     background-color: #bf63bc;
-    font-family: 'Economica', sans-serif;
+    font-family: 'Economica', Curlz MT;
     z-index: 99;
     text-align: center;
     position: relative;  
@@ -107,7 +107,7 @@ body{
 .menu li {
     display: inline-block;
     float: none;
-    font-size: 25px;
+    font-size: 30px;
     line-height: 15px;
     position:relative;
     cursor: pointer;
@@ -124,7 +124,7 @@ body{
     background-color:#eecaf0;
     display: inline-block;
     float: none;
-    font-size: 25px;
+    font-size: 30px;
     line-height: 15px;
     position:relative;
 }

@@ -1,22 +1,22 @@
 
 $(function(){
-    $('#viewEmp').show();
-    $('#addEmp').hide();
-    $('#modifyEmp').hide();
+    $('#viewOption').show();
+    $('#addOption').hide();
+    $('#modifyOption').hide();
     $('#view').click(function(){
-        $('#viewEmp').show();
-        $('#addEmp').hide();
-        $('#modifyEmp').hide();
+        $('#viewOption').show();
+        $('#addOption').hide();
+        $('#modifyOption').hide();
     });
     $('#add').click(function(){
-        $('#addEmp').show();
-        $('#modifyEmp').hide();
-        $('#viewEmp').hide();
+        $('#addOption').show();
+        $('#modifyOption').hide();
+        $('#viewOption').hide();
     });
     $('#modify').click(function(){
-        $('#modifyEmp').show();
-        $('#addEmp').hide();
-        $('#viewEmp').hide();
+        $('#modifyOption').show();
+        $('#addOption').hide();
+        $('#viewOption').hide();
     });
     
 });
