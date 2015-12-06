@@ -575,8 +575,8 @@ class db extends mysqli {
     public function verify_users ($name, $password){
         $name = $this->real_escape_string($name);
         $password = $this->real_escape_string($password);
-        $result = $this->query("SELECT 1 FROM Login
- 	           WHERE User_Name = '" . $name . "' AND Password = '" . $password . "'");
+        $result = $this->query("SELECT 1 FROM customer
+ 	           WHERE customer_id = '" . $name . "' AND password = '" . $password . "'");
         return $result->data_seek(0);
     }
 }
