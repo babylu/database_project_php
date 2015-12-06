@@ -10,6 +10,7 @@ and open the template in the editor.
 <title>Ice Cream</title>
 <script type="text/javascript" src="../jquery-2.1.4.js"></script>
 <script type="text/javascript" src="../main.js"></script>
+<script type="text/javascript" src="../js/searchItem.js"></script>
 <link rel="stylesheet" href="../css/common.css" type="text/css">
 <link rel="stylesheet" href="../css/itemCommon.css" type="text/css">
 <link rel="stylesheet" href="../css/pageIndex.css" type="text/css">
@@ -69,7 +70,7 @@ and open the template in the editor.
                  echo"<tr><td>" . htmlentities($row["name"]) . "</td>";
                  echo"<td>" . htmlentities($row["amount"]) . "</td>";
                  echo"<td>" . htmlentities($row["price"]) . "</td>";
-                              
+                 echo"<td><form action='../php/buyProduct.php'><input type='text' name='number'><input type='hidden' name='product_id' value='".htmlentities($row["product_id"])."'><button type='submit'>Buy</button></td>";              
                  echo "</tr>";
                           }
 
