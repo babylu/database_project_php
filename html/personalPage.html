@@ -9,10 +9,12 @@ and open the template in the editor.
 <meta charset="UTF-8">
 <title>personal page</title>
 <script type="text/javascript" src="../jquery-2.1.4.js"></script>
+<script type="text/javascript" src="../js/personalPage.js"></script>
+<script type="text/javascript" src="../main.js"></script>
 <link rel="stylesheet" href="../css/common.css" type="text/css">
 <link rel="stylesheet" href="../css/pageIndex.css" type="text/css">
 <link rel="stylesheet" href="../css/personalPage.css" type="text/css">
-<script type="text/javascript" src="../js/personalPage.js"></script>
+
 </head>
 <body>
     <div class="mainPart">
@@ -31,7 +33,8 @@ and open the template in the editor.
                 <li><a href="cookie.php">Cookies</a></li>
             </ul>
         </div>
-        <div class="left" style="height:700px;">
+        <div style="min-height: 900px;">
+        <div class="left">
             <div class="menuPersonal">
                 <ul>
                     <li id="personalInfoNavi">Personal Info</li>
@@ -39,10 +42,11 @@ and open the template in the editor.
                 </ul>
             </div>
         </div>
-        <div class="right" style="height:700px;">
+        <div class="right">
             <div id="personalInfoPage">
-                <div class="navHead" style="display:block">Personal Information</div>
-                <div style="height: 660px;border-top: dotted 1px gray;">
+                <center>
+                <fieldset>
+                    <legend>Personal Info</legend>
                     <form id="personalInfo" class="PersonalInfo">
                         <div>
                             <label>Name: </label>
@@ -107,14 +111,69 @@ and open the template in the editor.
                         </div>
                         <button id="updatePersonalInfo">Update</button>
                     </form>
-                </div>
+                </fieldset>
+                </center>
             </div>
             <div id="purchaseHistoryPage" hidden="hidden">
-                <div class="navHead" style="display:block">Purchase History</div>
-                <div style="height: 660px;border-top: dotted 1px gray;">
-                    
-                </div>
+                <center>
+                <fieldset form="purchaseHistory">
+                    <legend>Your History</legend>
+                    <div class="quantity">
+                        <label>Show</label> 
+                        <select id="showQuantity">
+                            <option value ="10">10</option>
+                            <option value ="20">20</option>
+                            <option value="30">30</option>
+                            <option value="all">all</option>
+                        </select>
+                        <label>Entities</label> 
+                    </div>
+                    <table class="itemShowTable">
+                        <tr>
+                            <th>Order Number</th>
+                            <th>Date</th>
+                            <th>Salesperson</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                        <tr>
+                            <td>1278923749</td>
+                            <td>2015-1-1</td>
+                            <td>Jones</td>
+                            <td>Cheese Cake</td>
+                            <td>1</td>
+                            <td>10.48</td>
+                        </tr>
+                        <tr>
+                            <td>1278923749</td>
+                            <td>2015-1-1</td>
+                            <td>Jones</td>
+                            <td>Cheese Cake</td>
+                            <td>1</td>
+                            <td>10.48</td>
+                        </tr>
+                        <tr>
+                            <td>1278923749</td>
+                            <td>2015-1-1</td>
+                            <td>Jones</td>
+                            <td>Cheese Cake</td>
+                            <td>1</td>
+                            <td>10.48</td>
+                        </tr>
+                        <tr>
+                            <td>1278923749</td>
+                            <td>2015-1-1</td>
+                            <td>Jones</td>
+                            <td>Cheese Cake</td>
+                            <td>1</td>
+                            <td>10.48</td>
+                        </tr>
+                    </table>
+                </fieldset>
+                </center>
             </div>
+        </div>
         </div>
         <div class="footer">
             <div>Copyright &copy; Delicious Dessert Inc. All Right Reserved.</div>
