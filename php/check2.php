@@ -17,7 +17,7 @@ $db = mysql_connect("localhost","root","root") or die("fail to connect database"
     
     
     while($check =  mysql_fetch_array($result)){
-        if($_POST['type']=='customer'){
+        if($_POST['type']=='Customer'){
         $_SESSION['customer_id']= $name;
         $_SESSION['username']= $check['name'];
         echo "<script>alert('login success')</script>";
