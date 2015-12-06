@@ -30,7 +30,7 @@ and open the template in the editor.
                 <li><a href="adminStock.php">Inventory</a></li>
                 <li><a href="adminDetail.php">Sales Status</a></li>
                 <li><a href="adminStatistic.php">Statistic</a></li>
-                <li><a href="editEmployee.php">Edit Employee</a></li>
+                
                 
             </ul>
             </div>

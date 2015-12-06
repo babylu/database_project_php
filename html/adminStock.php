@@ -30,7 +30,7 @@ and open the template in the editor.
                 <li><a href="adminStock.php">Inventory</a></li>
                 <li><a href="adminDetail.php">Sales Status</a></li>
                 <li><a href="adminStatistic.php">Statistic</a></li>
-                <li><a href="editEmployee.php">Edit Employee</a></li>
+                
                 
             </ul>
             </div>
@@ -43,8 +43,8 @@ and open the template in the editor.
    
                 <label style="margin-left: 15px;">Find product information</label>
                                 <div class="searchPro" >
-                                    <input type="text" name="product_name" value="" placeholder=" type product name" style="margin: 15px;height: 20px;">
-                                    <button>Search </button>
+                                    <input type="text" name="product_name" value="" placeholder=" Type product name">
+                                    <button class="buttonStyle">Search </button>
                                 </div>
                     
              

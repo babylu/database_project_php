@@ -8,8 +8,11 @@ and open the template in the editor.
 <head>
 <meta charset="UTF-8">
 <title>Hello World!</title>
+<script src="../jquery-2.1.4.js" type="text/javascript"></script>
 <link rel="stylesheet" href="../css/common.css" type="text/css">
 <link href="../css/admin.css" rel="stylesheet" type="text/css"/>
+<script src="../js/admin.js" type="text/javascript"></script>
+
 </head>
 <body>
     <div class="mainPart">
@@ -30,29 +33,29 @@ and open the template in the editor.
                 <li><a href="adminStock.php">Inventory</a></li>
                 <li><a href="adminDetail.php">Sales Status</a></li>
                 <li><a href="adminStatistic.php">Statistic</a></li>
-                <li><a href="editEmployee.php">Edit Employee</a></li>
+                
                 
                 
             </ul>
             </div>
             </div>
             <div class="right">
-                <div id="navHead" class="navHead" style="display:block">Employee Information</div>
-            
+                <div id="navHead" class="navHead" style="display:block">
+                    <input type="radio" name="EmpOption" id="view" value="view" checked="">View
+                    <input type="radio" name="EmpOption" id="add" value="add">Add
+                    <input type="radio" name="EmpOption" id="modify" value="modify">Modify
+                </div>
+                <label></label>
+<!--                show view employee part-->
+                <div id="viewEmp" >
             <div class="search">
-               
-   
-                <label style="margin-left: 15px;">Find Employee information</label>
+                    <label style="margin-left: 15px;">Find Employee information</label>
                                 <div class="searchEmp" >
-                                    <input type="text" name="employee_name" value="" placeholder=" type employee name" style="margin: 15px;height: 20px;">
-                                    <button>Search </button>
+                                    <input type="text" name="employee_name" value="" placeholder=" Type employee name">
+                                    <button class="buttonStyle">Search </button>
                                 </div>
-                    
-             
             </div>
                 <div class="showForm">
-                    
-                    
                     <div class="quantity">
                         <label>Show</label> 
                         <select id="showQuantity">
@@ -105,6 +108,74 @@ and open the template in the editor.
                 
                     
                 </div>
+                    </div>
+<!--                show add employee part-->
+<div id="addEmp" >
+    <div class="showTable">
+                     
+                         <center>
+                <form name="getemployee" action="editEmployee.php" method="POST">
+                    <table class="viewTable">
+                        <tr>
+                            <td>
+                                <label>Email:</label>           
+                                <input type="email" name="salesman_email" value=""></br>
+                            </td>
+                            <td>
+                                <label>Name:</label>
+                                <input type="text" name="salesman_name" value=""></br>
+                            </td>
+                            <td>
+                                <label>Street:</label>
+                                <input type="text" name="street" value=""></br>
+                            </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                <label>City:</label>
+                                <input type="text" name="city" value=""></br>
+                                    </td>
+                                    <td>
+                                <label>State:</label>
+                                <input type="text" name="state" value=""></br> 
+                                    </td>
+                                    <td>
+                                <label>Zip Code:</label>
+                                <input type="text" name="zipcode" value=""></br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                <label>Job Title:</label>
+                                <input type="text" name="jobTitle" value=""></br>
+                                    </td>
+                                    <td>
+                                <label>Salary:</label>
+                                <input type="text" name="salary" value=""></br> 
+                                    </td>
+                                    <td>
+                                <label>Store ID:</label>
+                                    <select name="store_id">
+                                        <option></option>
+                                    </select>
+                                    </td>
+                                </tr>
+                    </table>    
+                    </br>
+                                <input type="submit" value="Add New Employee" class="buttonStyle">
+                                
+      
+                            
+                            
+                        </form>
+                             </center>
+                   
+                </div>
+</div>
+<!--                show modify employee part-->
+<div id="modifyEmp" >
+    test
+</div>
 </div>
         <div class="footer">
             <div>Copyright &copy; Delicious Dessert Inc. All Right Reserved.</div>

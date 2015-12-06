@@ -9,6 +9,7 @@ and open the template in the editor.
 <meta charset="UTF-8">
 <title>Ice Cream</title>
 <script type="text/javascript" src="../jquery-2.1.4.js"></script>
+<script type="text/javascript" src="../main.js"></script>
 <link rel="stylesheet" href="../css/common.css" type="text/css">
 <link rel="stylesheet" href="../css/itemCommon.css" type="text/css">
 <link rel="stylesheet" href="../css/pageIndex.css" type="text/css">
@@ -18,8 +19,8 @@ and open the template in the editor.
         <div class="header">
             <img class="title" alt="title" src="../img/title.jpg">
             <div class="option">
-                <div id="username" class="username"><a href="logIn.html">Login/register</a></div>
-                <input id="searchInput" type="text" placeholder=" search"style='font-size:13px;'>
+                <div id="username" class="username">Login/Register</div>
+                <input id="searchInput" type="text" placeholder=" search" style='font-size:13px;'>
                 <img id="searchIcon" alt="searchIcon" src="../img/searchIcon20.jpeg"  onclick="window.location.href='searchResult.php'">
             </div>
             <ul id="menu" class="menu">

@@ -1,21 +1,20 @@
-.registerTable{
-    margin-left: 50px;
+.PersonalInfo{
     margin-top: 50px;
     text-align: right !important;
-    width: 550px;
+    width: 480px;
     height: 580px;
 }
-.registerTable div{
+.PersonalInfo div{
     margin-top: 10px;
     margin-bottom: 20px;
 }
-.registerTable input[type="text"]{
+.PersonalInfo input[type="text"]{
     width: 150px;
     height: 25px;
     margin-left: 10px;
 }
 
-.registerTable input[type="password"] {
+.PersonalInfo input[type="password"] {
     width: 150px;
     height: 25px;
     margin-left: 10px;
@@ -26,7 +25,7 @@
     margin-left: 10px;
     display: inline-block;
 }
-#registerSubmit{
+#updatePersonalInfo{
     width: 140px;
     line-height: 38px;
     text-align: center;
@@ -42,4 +41,31 @@
 }
 
 
+.menuPersonal{
+    width:220px;
+  
+}
+.menuPersonal ul {
+    width:220px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
 
+.menuPersonal ul li {
+    text-decoration: none;
+    color: #2f889a;
+    font-size:25px;
+    padding: 11.5px 11px;
+    background-color:#fbecfb;
+    display:block;
+    cursor: pointer;
+}
+
+
+.menuPersonal ul li:hover {
+    padding-left:10px;
+    color: #2f889a;
+    background-color:#fdf6fd;
+    cursor: pointer;
+}
