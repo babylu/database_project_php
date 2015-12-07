@@ -17,14 +17,17 @@ $db = mysql_connect("localhost","root","root") or die("fail to connect database"
     
     
     while($check =  mysql_fetch_array($result)){
-        if($_POST['type']=='customer'){
-        $_SESSION['customer_id']= $name;
-        $_SESSION['username']= $check['name'];
-        echo "<script>alert('login success')</script>";
-        echo "<script>window.location.href = 'http://localhost:8888/database_project_php/index.html'</script>";
-     
+        session_start();
+        if($_POST['type']=='Customer'){
+            $_SESSION['customer_id']= $name;
+            $_SESSION['username']= $check['name'];
+            echo $_SESSION['username'];
+            echo "<script>alert('login success')</script>";
+            echo "<script>window.location.href = 'http://localhost:8888/database_project_php/index.php'</script>";
         }
         else{
+            $_SESSION['customer_id']= $name;
+            $_SESSION['username']= $check['name'];
             echo "<script>alert('login success')</script>";
             echo "<script>window.location.href = 'http://localhost:8888/database_project_php/html/adminDetail.php'</script>";
         }

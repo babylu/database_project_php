@@ -22,12 +22,22 @@ and open the template in the editor.
         <div class="header">
             <img class="title" alt="title" src="../img/title.jpg">
             <div class="option">
-                <div id="username" class="username">123<!--Login/Register--></div>
+                <div id="link">
+                    <div id="username" class="username"><?php
+                            session_start();
+                            if(array_key_exists('customer_id', $_SESSION)){
+                                echo $_SESSION['customer_id'];
+                            }
+                            else{
+                                echo "Login/Register"; 
+                            }
+                    ?></div>
+                </div>
                 <input id="searchInput" type="text" placeholder=" search"style='font-size:13px;'>
                 <img id="searchIcon" alt="searchIcon" src="../img/searchIcon20.jpeg" onclick="window.location.href='searchResult.php'">
             </div>
             <ul id="menu" class="menu">
-                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.php">Home</a></li>
                 <li><a href="iceCream.php">Ice Creams</a></li>
                 <li><a href="cake.php">Cakes</a></li>
                 <li><a href="chocolate.php">Chocolates</a></li>
