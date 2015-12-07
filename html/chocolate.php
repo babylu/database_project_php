@@ -56,48 +56,38 @@ and open the template in the editor.
                         </select>
                         <label>Entities</label> 
                     </div>
-                    <table class="itemShowTable" id="dataTables-1">
-                        <!--when use php to generate this table, please ask Emily to do control of word length-->
-                           
+                    <table class="itemShowTable" id="dataTables-1">    
                         <tr>
-                                <th>Item Name</th>
-                                <th>Stock</th>
-                                <th>Price</th>
-                                <th>Buy Number</th>
-                            </tr>
-                           <tbody>
-                                <?php
-               $con = mysql_connect("localhost","root","root");
-                    if (!$con)
-                       {
-                die('Could not connect: ' . mysql_error());
-                    }
-
-                    mysql_select_db("e-commerce", $con);
-
-              $result = mysql_query("select product_id, name,  amount, price from product where kind='chocolate'");
-
-                 while($row = mysql_fetch_array($result))
-                         {
-                 echo"<tr><td>" . htmlentities($row["name"]) . "</td>";
-                 echo"<td>" . htmlentities($row["amount"]) . "</td>";
-                 echo"<td>" . htmlentities($row["price"]) . "</td>";
-                 echo"<td><form action='../php/buyProduct.php'><input type='text' name='number'><input type='hidden' name='product_id' value='".htmlentities($row["product_id"])."'><button type='submit'>Buy</button></td>";            
-                 echo "</tr>";
-                          }
-
-                      mysql_close($con);
-                             ?>                        
-                            </tbody>
-                   
+                            <th>Item Name</th>
+                            <th>Stock</th>
+                            <th>Price</th>
+                            <th>Buy Number</th>
+                        </tr>
+                        <tbody>
+                            <?php
+                                $con = mysql_connect("localhost","root","root");
+                                if (!$con){
+                                    die('Could not connect: ' . mysql_error());
+                                }
+                                mysql_select_db("e-commerce", $con);
+                                $result = mysql_query("select product_id, name,  amount, price from product where kind='chocolate'");
+                                while($row = mysql_fetch_array($result)){
+                                    echo"<tr><td>" . htmlentities($row["name"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["amount"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["price"]) . "</td>";
+                                    echo"<tr><td>" . htmlentities($row["name"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["amount"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["price"]) . "</td>";
+                                    echo"<td>"
+                                        . "<form action='../php/buyProduct.php'>"
+                                                . "<input type='text' name='number'><input type='hidden' name='product_id' value='".htmlentities($row["product_id"])."'><button type='submit'>Buy</button>"
+                                        . "</form></td>";
+                                    echo "</tr>";
+                                }
+                                mysql_close($con);
+                            ?>                        
+                        </tbody>
                     </table>
-                    <script>
-                            $(function(){
-                                $('#dataTables-1').dataTable( {
-                                    "bProcessing": true,
-                                } );
-                            });
-                        </script>
                 </fieldset>
             </center>
         </div>

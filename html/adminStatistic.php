@@ -16,7 +16,7 @@ and open the template in the editor.
         <div class="header">
             <img class="title" alt="title" src="../img/title.jpg">
             <div class="option">
-                <div id="username" class="username"><a href="../html/logIn.html">Log Out</a></div>
+                <div id="username" class="username"><a href="./logIn.html">Log Out</a></div>
                 <input id="searchInput" type="text" placeholder=" search" style='font-size:13px;'>
                 <img id="searchIcon" alt="searchIcon" src="../img/searchIcon20.jpeg">
             </div>            

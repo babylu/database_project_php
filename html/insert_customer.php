@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-header('Cache-control: private, must-revalidate'); //support jump back
+
 $con = mysqli_connect("localhost:8889","root","root","e-commerce");
 $_POST;
 if(!$con)
