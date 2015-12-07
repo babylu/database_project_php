@@ -25,16 +25,22 @@ $sql1 .="INSERT INTO business (customer_id,category,gross_income)
 
 $referer = "http://localhost:8888/database_project_php/html/register.html";
 if($_POST[type]==home){
-    if (mysqli_multi_query($con, $sql)) {  
+    if (mysqli_multi_query($con, $sql)) { 
+        session_start();
+        $_SESSION['customer_id']= $_POST[username];
+        $_SESSION['username']= $_POST[name];
         echo "<script>alert('register success');</script>";
-        echo "<script>window.location.href = 'http://localhost:8888/PhpProject1/index.html';</script>";
+        echo "<script>window.location.href = 'http://localhost:8888/database_project_php/index.php';</script>";
     } else {
         echo "<script>alert(\"" . mysqli_error($con) . "\");window.location.href=\"" . $referer . "\";</script>";
     }
 }else {
-    if (mysqli_multi_query($con, $sql1)) { 
+    if (mysqli_multi_query($con, $sql1)) {
+        session_start();
+        $_SESSION['customer_id']= $_POST[username];
+        $_SESSION['username']= $_POST[name];
         echo "<script>alert('register success');</script>";
-        echo "<script>window.location.href = 'http://localhost:8888/PhpProject1/index.html';</script>"; 
+        echo "<script>window.location.href = 'http://localhost:8888/database_project_php/index.php';</script>"; 
     } else {
         echo  "<script>alert(\"" . mysqli_error($con) . "\");window.location.href=\"" . $referer . "\";</script>";
     }
