@@ -10,6 +10,7 @@ and open the template in the editor.
 <title>Hello World!</title>
 <link rel="stylesheet" href="../css/common.css" type="text/css">
 <link href="../css/admin.css" rel="stylesheet" type="text/css"/>
+<script src="../chart/Chart.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="mainPart">
@@ -28,14 +29,16 @@ and open the template in the editor.
                 <li><a href="adminStock.php">Inventory</a></li>
                 <li><a href="adminDetail.php">Sales Status</a></li>
                 <li><a href="adminStatistic.php">Statistic</a></li>
-                
-                
             </ul>
             </div>
-            </div>
-            <div class="right">
-               <div id="navHead" class="navHead" style="display:block">Statistic</div> 
-            </div>
+                
+        </div>
+        <div class="right">
+           <div id="navHead" class="navHead" style="display:block">Statistic</div> 
+           <div>
+                <canvas id="chart-area" width="600" height="600" style="width: 300px; height: 300px;"></canvas>
+           </div>
+        </div>
 
         <div class="footer">
             <div>Copyright &copy; Delicious Dessert Inc. All Right Reserved.</div>
@@ -44,9 +47,50 @@ and open the template in the editor.
             <div>PHONE: 412-***-****</div>
         </div>
     </div>
-    <?php
+    <script>
 
-    ?>
+		var pieData = [
+				{
+					value: 300,
+					color:"#F7464A",
+					highlight: "#FF5A5E",
+					label: "Red"
+				},
+				{
+					value: 50,
+					color: "#46BFBD",
+					highlight: "#5AD3D1",
+					label: "Green"
+				},
+				{
+					value: 100,
+					color: "#FDB45C",
+					highlight: "#FFC870",
+					label: "Yellow"
+				},
+				{
+					value: 40,
+					color: "#949FB1",
+					highlight: "#A8B3C5",
+					label: "Grey"
+				},
+				{
+					value: 120,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "Dark Grey"
+				}
+
+			];
+
+			window.onload = function(){
+				var ctx = document.getElementById("chart-area").getContext("2d");
+				window.myPie = new Chart(ctx).Pie(pieData);
+			};
+
+
+
+	</script>
 </body>
 </html>
 
