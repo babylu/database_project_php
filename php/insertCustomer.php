@@ -21,10 +21,10 @@ $sql1="INSERT INTO customer (customer_id,name,address_street,address_city,addres
     VALUES('$_POST[username]','$_POST[name]','$_POST[address_street]','$_POST[address_city]','$_POST[address_state]','$_POST[address_zipcode]','$_POST[password]','$_POST[type]');";
 $sql1 .="INSERT INTO business (customer_id,category,gross_income)
     VALUES('$_POST[username]','$_POST[category]','$_POST[gross_income]')";
-
+echo $_POST[type];
 
 $referer = "http://localhost:8888/database_project_php/html/register.html";
-if($_POST[type]==home){
+if($_POST[type]=='home'){
     if (mysqli_multi_query($con, $sql)) { 
         session_start();
         $_SESSION['customer_id']= $_POST[username];

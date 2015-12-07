@@ -57,66 +57,129 @@ and open the template in the editor.
                 <center>
                 <fieldset>
                     <legend>Personal Info</legend>
-                    <form id="personalInfo" class="PersonalInfo">
+                    <form id="personalInfo" class="PersonalInfo" action="../php/modifyUser.php" method="post">
+                    <?php
+                        session_start();
+                        $customer_id = $_SESSION['customer_id'];
+                        $con = mysql_connect("localhost","root","root");
+                        if (!$con){
+                            die('Could not connect: ' . mysql_error());
+                        }
+                        mysql_select_db("e-commerce", $con);
+                        
+                        $sqlSelectCustomerTable = "select * from customer where customer_id = '$customer_id';";
+                        $resultCustomer = mysql_query($sqlSelectCustomerTable);
+                        while($check = mysql_fetch_array($resultCustomer)){
+                            
+                            $name = htmlentities($check["name"]);
+                            $address_street = htmlentities($check["address_street"]);
+                            $address_city = htmlentities($check["address_city"]);
+                            $address_state = htmlentities($check["address_state"]);
+                            $address_zipcode= htmlentities($check["address_zipcode"]);
+                            $type= htmlentities($check["kind"]);
+                            if($type == "home"){
+                                $sqlSelectPersonalTable = "select * from personal where customer_id = '$customer_id';";
+                                $resultPersonal = mysql_query($sqlSelectPersonalTable);
+                                while($check = mysql_fetch_array($resultPersonal)){
+                                    $marriageStatue= htmlentities($check["marriage"]);
+                                    $gender= htmlentities($check["gender"]);
+                                    $age= htmlentities($check["age"]);
+                                    $income= htmlentities($check["income"]);
+                                }
+                                
+                            }else{
+                                $sqlSelectPersonalTable = "select * from business where customer_id = '$customer_id';";
+                                $resultBusiness = mysql_query($sqlSelectPersonalTable);
+                                while($check = mysql_fetch_array($resultBusiness)){
+                                    $category= htmlentities($check["category"]);
+                                    $annualIncome= htmlentities($check["gross_income"]);
+                                }
+                            }
+                        }
+                    ?>
                         <div>
                             <label>Name: </label>
-                            <input type="text" name="name" value="value">
+                            <input type="text" name="name" value="<?php echo $name;?>">
                         </div>
                         <div>
                             <label>Street: </label>
-                            <input type="text" name="address_street" value="value">
+                            <input type="text" name="address_street" value="<?php echo $address_street;?>">
                         </div>
                         <div>
                             <label>City: </label>
-                            <input type="text" name="address_city" value="value">
+                            <input type="text" name="address_city" value="<?php echo $address_city;?>">
                         </div>
                         <div>
                             <label>State: </label>
-                            <input type="text" name="address_state" value="value">
+                            <input type="text" name="address_state" value="<?php echo $address_state;?>">
                         </div>
                         <div>
                             <label>Zipcode: </label>
-                            <input type="text" name="address_Zipcode" value="value">
+                            <input type="text" name="address_zipcode" value="<?php echo $address_zipcode;?>">
                         </div>
                         <div>
                             <label>User Type: </label>
                             <div class="radio" style="margin-top: 0;margin-bottom: 0;">
-                                <input id="homeRadio" type="radio" name="type" value="home" checked="checked">Home
-                                <input id="businessRadio" type="radio" name="type" value="business">Business
+                                <?php
+                                    if($type=="home"){
+                                        echo '<input id="homeRadio" type="radio" name="type" value="home" checked="checked" disabled>Home
+                                             <input id="businessRadio" type="radio" name="type" value="business" disabled>Business
+                                             <input type="hidden" name="type" value="home">';
+                                    }else{
+                                        echo '<input id="homeRadio" type="radio" name="type" value="home" disabled>Home
+                                             <input id="businessRadio" type="radio" name="type" value="business" checked="checked" disabled>Business
+                                             <input type="hidden" name="type" value="business">';
+                                    }
+                                ;?>
                             </div>
                         </div>
                         <div id="business">
                             <div>
                                 <label>Category: </label>
-                                <input type="text" name="category" value="value">
+                                <input type="text" name="category" value="<?php echo $category;?>">
                             </div>
                             <div>
                                 <label>Annual Income: </label>
-                                <input type="text" name="annualIncome" value="value">
+                                <input type="text" name="annualIncome" value="<?php echo $annualIncome;?>">
                             </div>
                         </div>
                         <div id="home">
                             <div>
                                 <label>Marriage Statue: </label>
                                 <div class="radio" style="margin-top: 0;margin-bottom: 0;">
-                                    <input type="radio" name="marriageStatue" value="married" checked="checked">Married
-                                    <input type="radio" name="marriageStatue" value="single">Single
+                                    <?php
+                                        if($marriageStatue == "married"){
+                                            echo '<input type="radio" name="marriageStatue" value="married" checked="checked">Married
+                                                   <input type="radio" name="marriageStatue" value="single">Single';
+                                        }else{
+                                            echo '<input type="radio" name="marriageStatue" value="married">Married
+                                                    <input type="radio" name="marriageStatue" value="single" checked="checked">Single';
+                                        }
+                                    ?>
                                 </div>
                             </div>
                             <div>
                                 <label>Gender: </label>
                                 <div class="radio" style="margin-top: 0;margin-bottom: 0;">
-                                    <input type="radio" name="gender" value="Female" checked="checked">Female
-                                    <input type="radio" name="gender" value="Male">Male
+                                    <?php
+                                        if($gender=="Female"){
+                                            echo '<input type="radio" name="gender" value="Female" checked="checked">Female
+                                                    <input type="radio" name="gender" value="Male">Male';
+                                        }else{
+                                            echo '<input type="radio" name="gender" value="Female">Female
+                                                    <input type="radio" name="gender" value="Male" checked="checked">Male';
+                                        }
+                                    ?>
+                                    
                                 </div>
                             </div>
                             <div>
                                 <label>Age: </label>
-                                <input type="text" name="age" value="value">
+                                <input type="text" name="age" value="<?php echo $age;?>">
                             </div>
                             <div>
                                 <label>Income: </label>
-                                <input type="text" name="income" value="value">
+                                <input type="text" name="income" value="<?php echo $income;?>">
                             </div>
                         </div>
                         <button id="updatePersonalInfo">Update</button>
