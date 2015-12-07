@@ -65,23 +65,28 @@ and open the template in the editor.
                             <th>Buy Number</th>
                         </tr>
                         <?php
-                            $searchInput = $_SERVER["QUERY_STRING"];
+                        
                             $con = mysql_connect("localhost","root","root");
                             if (!$con){
                                 die('Could not connect: ' . mysql_error());
                             }
                             mysql_select_db("e-commerce", $con);
-                            $result = mysql_query("select * from product where name like '%" . $searchInput . "%'");                           
-                            while($row = mysql_fetch_array($result)){
-                                echo"<tr><td>" . htmlentities($row["name"]) . "</td>";
-                                echo"<td>" . htmlentities($row["kind"]) . "</td>";
-                                echo"<td>" . htmlentities($row["amount"]) . "</td>";
-                                echo"<td>" . htmlentities($row["price"]) . "</td>";
-                                echo"<td>"
-                                    . "<form action='../php/buyProduct.php'>"
-                                            . "<input type='text' name='number'><input type='hidden' name='product_id' value='".htmlentities($row["product_id"])."'><button type='submit'>Buy</button>"
-                                    . "</form></td>";          
-                                echo "</tr>";
+                            $searchInputTotal = $_SERVER["QUERY_STRING"];
+                            $strarr = explode("%20",$searchInputTotal);
+                            foreach($strarr as $searchInput){
+                                $result = mysql_query("select * from product where name like '%" . $searchInput . "%' or kind like '%" . $searchInput . "%';");                           
+                                while($row = mysql_fetch_array($result)){
+                                    echo"<tr><td>" . htmlentities($row["name"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["kind"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["amount"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["price"]) . "</td>";
+                                    echo"<td>"
+                                        . "<form action='../php/buyProduct.php'>"
+                                                . "<input type='text' name='number'><input type='hidden' name='product_id' value='".htmlentities($row["product_id"])."'><button type='submit'>Buy</button>"
+                                        . "</form></td>"; 
+                                    echo "</tr>";
+                                }
+                                
                             }
                             mysql_close($con);
                         ?>
