@@ -47,35 +47,33 @@ and open the template in the editor.
                         <label>Entities</label> 
                     </div>
                     <table class="itemShowTable">
-                        <!--when use php to generate this table, please ask Emily to do control of word length-->
-                            <tr>
-                                <th>Item Name</th>
-                                <th>Stock</th>
-                                <th>Price</th>
-                                <th>Buy Number</th>
-                            </tr>
-                            <?php
-               $con = mysql_connect("localhost","root","root");
-                    if (!$con)
-                       {
-                die('Could not connect: ' . mysql_error());
-                    }
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Stock</th>
+                            <th>Price</th>
+                            <th>Buy Number</th>
+                        </tr>
+                        <?php
+                            $con = mysql_connect("localhost","root","root");
+                            if (!$con){
+                                die('Could not connect: ' . mysql_error());
+                            }
+                            mysql_select_db("e-commerce", $con);
+                            $result = mysql_query("select product_id, name,  amount, price from product where kind='cookie'");
 
-                    mysql_select_db("e-commerce", $con);
+                            while($row = mysql_fetch_array($result)){
+                                echo"<tr><td>" . htmlentities($row["name"]) . "</td>";
+                                echo"<td>" . htmlentities($row["amount"]) . "</td>";
+                                echo"<td>" . htmlentities($row["price"]) . "</td>";
+                                echo"<td>"
+                                    . "<form action='../php/buyProduct.php'>"
+                                            . "<input type='text' name='number'><input type='hidden' name='product_id' value='".htmlentities($row["product_id"])."'><button type='submit'>Buy</button>"
+                                    . "</form></td>";
+                                echo "</tr>";
+                            }
 
-              $result = mysql_query("select product_id, name,  amount, price from product where kind='cookie'");
-
-                 while($row = mysql_fetch_array($result))
-                         {
-                 echo"<tr><td>" . htmlentities($row["name"]) . "</td>";
-                 echo"<td>" . htmlentities($row["amount"]) . "</td>";
-                 echo"<td>" . htmlentities($row["price"]) . "</td>";
-                 echo"<td><form action='../php/buyProduct.php'><input type='text' name='number'><input type='hidden' name='product_id' value='".htmlentities($row["product_id"])."'><button type='submit'>Buy</button></td>";              
-                 echo "</tr>";
-                          }
-
-                      mysql_close($con);
-                             ?>       
+                            mysql_close($con);
+                        ?>       
                     </table>
                 </fieldset>
             </center>

@@ -78,16 +78,7 @@ and open the template in the editor.
                             </thead>
                             <tr>
                                 
-                                <td>xil129</td>
-                                <td>Ivy</td>
-                                <td>3162 bohem street</td>
-                                <td>Pittsburgh</td>
-                                <td>PA</td>
-                                <td>15213</td>
-                             
-                                <td>$1234</td>
-                                <td>Student</td>
-                                <td>Pittsburgh Area</td>
+                                
                                 
                             </tr>
                             <tbody>    
