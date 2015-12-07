@@ -22,7 +22,7 @@ $db = mysql_connect("localhost","root","root") or die("fail to connect database"
             $_SESSION['customer_id']= $name;
             $_SESSION['username']= $check['name'];
             echo "<script>alert('login success')</script>";
-            echo "<script>window.location.href = 'http://localhost:8888/database_project_php/index.html'</script>";
+            echo "<script>window.location.href = 'http://localhost:8888/database_project_php/index.php'</script>";
         }
     }
     else{
