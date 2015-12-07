@@ -19,6 +19,8 @@ and open the template in the editor.
             <img class="title" alt="title" src="../img/title.jpg">
             <div class="option">
                 <div id="username" class="username"><a href="./logIn.php">Log Out</a></div>
+                <input id="searchInput" type="text" placeholder=" search" style='font-size:13px;'>
+                <img id="searchIcon" alt="searchIcon" src="../img/searchIcon20.jpeg">
             </div>            
         </div>
         <div class="body">
@@ -26,7 +28,7 @@ and open the template in the editor.
             <div class="menuAdmin">
             <ul>
                 <li><a href="adminEmployee.php">Employee</a></li>
-                <li><a href="adminStore.php">Store</a></li>
+                <li><a href="adminStore.php">Store & Region</a></li>
                 <li><a href="adminStock.php">Inventory</a></li>
                 <li><a href="adminDetail.php">Sales Status</a></li>
                 <li><a href="adminStatistic.php">Statistic</a></li>
