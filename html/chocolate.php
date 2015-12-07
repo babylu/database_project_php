@@ -75,9 +75,6 @@ and open the template in the editor.
                                     echo"<tr><td>" . htmlentities($row["name"]) . "</td>";
                                     echo"<td>" . htmlentities($row["amount"]) . "</td>";
                                     echo"<td>" . htmlentities($row["price"]) . "</td>";
-                                    echo"<tr><td>" . htmlentities($row["name"]) . "</td>";
-                                    echo"<td>" . htmlentities($row["amount"]) . "</td>";
-                                    echo"<td>" . htmlentities($row["price"]) . "</td>";
                                     echo"<td>"
                                         . "<form action='../php/buyProduct.php'>"
                                                 . "<input type='text' name='number'><input type='hidden' name='product_id' value='".htmlentities($row["product_id"])."'><button type='submit'>Buy</button>"
