@@ -78,16 +78,27 @@ and open the template in the editor.
                             </thead>
                             <tr>
                                 
-                                <td>xil129@pitt.edu</td>
-                                <td>Ivy</td>
-                                <td>3162 Bohem ST</td>
-                                <td>Pittsburgh</td>
-                                <td>PA</td>
-                                <td>15213</td>
-                             
-                                <td>$1234</td>
-                                <td>Student</td>
-                                <td>Pittsburgh Area</td>
+                                <?php
+                                $con = mysql_connect("localhost","root","root");
+                                if (!$con){
+                                    die('Could not connect: ' . mysql_error());
+                                }
+                                mysql_select_db("e-commerce", $con);
+                                $result = mysql_query("select * from salesperson");
+                                while($row = mysql_fetch_array($result)){
+                                    echo"<tr><td>" . htmlentities($row["salesperson_id"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["name"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["address_street"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["address_city"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["address_state"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["address_zipcode"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["salary"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["job_title"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["store_id"]) . "</td>";
+                                    echo "</tr>";
+                                }
+                                mysql_close($con);
+                             ?>
                                 
                             </tr>
                             <tbody>    

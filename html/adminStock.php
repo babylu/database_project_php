@@ -74,11 +74,23 @@ and open the template in the editor.
                                 </tr>
                             </thead>
                             <tr>
-                                <td>01</td>
-                                <td>Cheesecake</td>
-                                <td>10</td>
-                                <td>$8</td>
-                                <td>Cake</td>
+                                <?php
+                                $con = mysql_connect("localhost","root","root");
+                                if (!$con){
+                                    die('Could not connect: ' . mysql_error());
+                                }
+                                mysql_select_db("e-commerce", $con);
+                                $result = mysql_query("select * from product");
+                                while($row = mysql_fetch_array($result)){
+                                    echo"<tr><td>" . htmlentities($row["product_id"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["name"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["amount"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["price"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["kind"]) . "</td>";                                 
+                                    echo "</tr>";
+                                }
+                                mysql_close($con);
+                             ?>
                                 
                                 
                             </tr>
