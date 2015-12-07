@@ -210,38 +210,34 @@ and open the template in the editor.
                             <th>Quantity</th>
                             <th>Price</th>
                         </tr>
-                        <tr>
-                            <td>1278923749</td>
-                            <td>2015-1-1</td>
-                            <td>Jones</td>
-                            <td>Cheese Cake</td>
-                            <td>1</td>
-                            <td>10.48</td>
-                        </tr>
-                        <tr>
-                            <td>1278923749</td>
-                            <td>2015-1-1</td>
-                            <td>Jones</td>
-                            <td>Cheese Cake</td>
-                            <td>1</td>
-                            <td>10.48</td>
-                        </tr>
-                        <tr>
-                            <td>1278923749</td>
-                            <td>2015-1-1</td>
-                            <td>Jones</td>
-                            <td>Cheese Cake</td>
-                            <td>1</td>
-                            <td>10.48</td>
-                        </tr>
-                        <tr>
-                            <td>1278923749</td>
-                            <td>2015-1-1</td>
-                            <td>Jones</td>
-                            <td>Cheese Cake</td>
-                            <td>1</td>
-                            <td>10.48</td>
-                        </tr>
+                        <?php
+                            session_start();
+                            $customer_id = $_SESSION['customer_id'];
+                            $con = mysql_connect("localhost","root","root");
+                            if (!$con){
+                                die('Could not connect: ' . mysql_error());
+                            }
+                            mysql_select_db("e-commerce", $con);
+                            $result = mysql_query("select * from transaction where customer_id='$customer_id';");
+                            while($row = mysql_fetch_array($result)){
+                                echo"<tr><td>" . htmlentities($row["order_number"]) . "</td>";
+                                echo"<td>" . htmlentities($row["date"]) . "</td>";
+                                $salesperson_id = $row["salesperson_id"];
+                                $resultSalesperson = mysql_query("select name from salesperson where salesperson_id='$salesperson_id';");
+                                while($rowSalesperson = mysql_fetch_array($resultSalesperson)){
+                                    echo"<td>" . htmlentities($rowSalesperson["name"]) . "</td>";
+                                }
+                                $product_id = $row["product_id"];
+                                $resultProduct = mysql_query("select name from product where product_id='$product_id';");
+                                while($rowProduct = mysql_fetch_array($resultProduct)){
+                                    echo"<td>" . htmlentities($rowProduct["name"]) . "</td>";
+                                }
+                                echo"<td>" . htmlentities($row["product_quantity"]) . "</td>";  
+                                echo"<td>" . htmlentities($row["product_price"]) . "</td>";
+                                echo "</tr>";
+                            }
+                            mysql_close($con);
+                        ?>
                     </table>
                 </fieldset>
                 </center>
