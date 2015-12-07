@@ -18,7 +18,7 @@ and open the template in the editor.
         <div class="header">
             <img class="title" alt="title" src="../img/title.jpg">
             <div class="option">
-                <div id="username" class="username"><a href="../html/logIn.html">Log Out</a></div>
+                <div id="username" class="username"><a href="./logIn.php">Log Out</a></div>
                 <input id="searchInput" type="text" placeholder=" search" style='font-size:13px;'>
                 <img id="searchIcon" alt="searchIcon" src="../img/searchIcon20.jpeg">
             </div>            
@@ -75,17 +75,28 @@ and open the template in the editor.
                                     
                                 </tr>
                             </thead>
-                            <tr>
-                                <td>01</td>                               
-                                <td>3162 bohem street</td>
-                                <td>Pittsburgh</td>
-                                <td>PA</td>
-                                <td>15213</td>                            
-                                <td>21</td>
-                                <td>50</td>
-                                <td>02</td>                                
-                            </tr>
-                            <tbody>                                    
+                            
+                            <tbody>  
+                                <?php
+                                $con = mysql_connect("localhost","root","root");
+                                if (!$con){
+                                    die('Could not connect: ' . mysql_error());
+                                }
+                                mysql_select_db("e-commerce", $con);
+                                $result = mysql_query("select * from store");
+                                while($row = mysql_fetch_array($result)){
+                                    echo"<tr><td>" . htmlentities($row["store_id"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["address_street"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["address_city"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["address_state"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["address_zipcode"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["manager_id"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["number_salesperson"]) . "</td>";
+                                    echo"<td>" . htmlentities($row["region_id"]) . "</td>";
+                                    echo "</tr>";
+                                }
+                                mysql_close($con);
+                             ?>
                             </tbody>
                         </table>
                         
