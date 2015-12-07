@@ -28,7 +28,7 @@ and open the template in the editor.
             <div class="menuAdmin">
             <ul>
                 <li><a href="adminEmployee.php">Employee</a></li>
-                <li><a href="adminStore.php">Store & Region</a></li>
+                <li><a href="adminStore.php">Store</a></li>
                 <li><a href="adminStock.php">Inventory</a></li>
                 <li><a href="adminDetail.php">Sales Status</a></li>
                 <li><a href="adminStatistic.php">Statistic</a></li>                
@@ -163,13 +163,24 @@ and open the template in the editor.
                 <div class="showTable">
                      
                          <center>
-                <form name="getStore" action="" method="POST">
+                             <form name="getStore" action="../php/addstore.php" method="POST">
                     <table class="viewTable">
                         <tr>
                             <td>
                                 <label>Region ID:</label>
                                     <select name="region_id" style="width:80px;">
-                                        <option></option>
+                                       <?PHP
+                                    $con = mysql_connect("localhost","root","root");
+                                    if (!$con){
+                                        die('Could not connect: ' . mysql_error());
+                                }
+                                    mysql_select_db("E-commerce", $con);
+                                    $sql="select region_id from region";
+                                    $result=  mysql_query($sql);
+                                    while($row=  mysql_fetch_array($result)){
+                                        echo "<option>".$row[region_id]."<option>";
+                                    }
+                                        ?>
                                     </select>
                                     </td>
                             <td>
@@ -191,9 +202,20 @@ and open the template in the editor.
                                 <input type="text" name="zipcode" value=""></br>
                                     </td>
                                     <td>
-                                <label>Manager ID:</label>
+                                        <label>Manager ID:</label>
                                     <select name="manager_id" style="width:80px;">
-                                        <option></option>
+                                       <?PHP
+                                    $con = mysql_connect("localhost","root","root");
+                                    if (!$con){
+                                        die('Could not connect: ' . mysql_error());
+                                }
+                                    mysql_select_db("E-commerce", $con);
+                                    $sql="select salesperson_id from store";
+                                    $result=  mysql_query($sql);
+                                    while($row=  mysql_fetch_array($result)){
+                                        echo "<option>".$row[store_id]."<option>";
+                                    }
+                                        ?>
                                     </select>
                                     </td>
                                 </tr>

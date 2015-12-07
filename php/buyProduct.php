@@ -6,47 +6,45 @@
  * and open the template in the editor.
  */
 $con = mysqli_connect("localhost:8889","root","root","e-commerce");
+
 if(!$con)
 {
-    die('could not connect:' . mysqli_connect_error);
+    die('could not connect:' . mysqli_connect_error());
 }
+         
 
-$number = $_POST['number'];
-$product_id = $_POST['product_id'];
-
-//gathering data
-$sqlSelectFromProduct = "select price from Product where product_id= '$product_id'";
-$priceResult = mysql_query($sqlSelectFromProduct);
-while($check =  mysql_fetch_array($result)){
-    $price = $check['price'] * $number;
-}
-
-
-//    echo "<script>alert('".$price."')</script>";
-    
-//    $sql="INSERT INTO customer (customer_id,name,address_street,address_city,address_state,address_zipcode,password,kind)
-//        VALUES('$_POST[username]','$_POST[name]','$_POST[address_street]','$_POST[address_city]','$_POST[address_state]','$_POST[address_zipcode]','$_POST[password]','$_POST[type]');";
-//    $sql .="INSERT INTO personal (customer_id,marriage,gender,age,income)
-//        VALUES('$_POST[username]','$_POST[marriageStatue]','$_POST[gender]','$_POST[age]','$_POST[income]')";
-//    $sql = "select * from customer where customer_id= '$name' and password = '$password' limit 1";
-//    $result = mysql_query($sql);
-//    
-//    
-//    while($check =  mysql_fetch_array($result)){
-//        if($_POST['type']=='Customer'){
-//        $_SESSION['customer_id']= $name;
-//        $_SESSION['username']= $check['name'];
-//        echo "<script>alert('login success')</script>";
-//        echo "<script>window.location.href = 'http://localhost:8888/database_project_php/index.html'</script>";
-//     
-//        }
-//        else{
-//            echo "<script>alert('login success')</script>";
-//            echo "<script>window.location.href = 'http://localhost:8888/database_project_php/html/adminDetail.php'</script>";
-//        }
-//    }
-//    while(!$check =  mysql_fetch_array($result)){
-//        echo "<script>alert('login fail')</script>";
-//        echo "<script>window.location.href = 'http://localhost:8888/database_project_php/html/logIn.php'</script>";
-//    }
+                session_start();
+                $customer_id=$_SESSION['customer_id'];
+                $number = intval($_POST['number']);
+                $product_id =intval($_POST['product_id']);
+                $ordernumber = (int)date(ydmhis);
+                $sqlSelectFromProduct = "select * from product where product_id=$product_id";
+                $result=mysqli_query($con, $sqlSelectFromProduct);
+                while($row =  mysqli_fetch_array($result)){
+                    echo "<script>alert('success');</script>";
+                    if($row['amount']>0){
+                        $price = $row['price'] * $number;
+                        echo "<script>alert('$price');</script>";
+                    }else{
+                        echo "<script>alert('product sold out');</script>";
+                        exit();
+           } 
+           
+   }            
+                $referer="http://localhost:8888/database_project_php/index.php";
+                $sqlUpdateTransaction = "INSERT INTO transaction(order_number,product_price,product_quantity,product_id,customer_id)"
+                        ."VALUES ('$ordernumber','$price','$number','$product_id','$customer_id')";
+                $sqlUpdateProduct ="UPDATE product set amount=amount-$number where product_id=$product_id;";
+                if(mysqli_query($con,$sqlUpdateTransaction)){
+                   echo "<script>alert('Buy success');</script>";
+                   echo "<script>window.location.href = 'http://localhost:8888/database_project_php/index.php';</script>";
+                }else{
+                   echo  "<script>alert(\"" . mysqli_error($con) . "\");window.location.href=\"" . $referer . "\";</script>";
+                }
+                if(mysqli_query($con, $sqlUpdateProduct)){
+                    echo "<script>alert('product update success');</script>";
+                    
+                }else{
+                    echo  "<script>alert(\"" . mysqli_error($con) . "\");window.location.href=\"" . $referer . "\";</script>";
+                }
 ?>

@@ -26,7 +26,7 @@ and open the template in the editor.
             <div class="menuAdmin">
             <ul>
                 <li><a href="adminEmployee.php">Employee</a></li>
-                <li><a href="adminStore.php">Store & Region</a></li>
+                <li><a href="adminStore.php">Store</a></li>
                 <li><a href="adminStock.php">Inventory</a></li>
                 <li><a href="adminDetail.php">Sales Status</a></li>
                 <li><a href="adminStatistic.php">Statistic</a></li>

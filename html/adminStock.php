@@ -28,7 +28,7 @@ and open the template in the editor.
             <div class="menuAdmin">
             <ul>
                 <li><a href="adminEmployee.php">Employee</a></li>
-                <li><a href="adminStore.php">Store & Region</a></li>
+                <li><a href="adminStore.php">Store</a></li>
                 <li><a href="adminStock.php">Inventory</a></li>
                 <li><a href="adminDetail.php">Sales Status</a></li>
                 <li><a href="adminStatistic.php">Statistic</a></li>
@@ -106,11 +106,14 @@ and open the template in the editor.
 <div id="addOption">
     <div class="showTable">                     
                          <center>
-                <form name="addInventory" action="" method="POST">
+                             <form name="addInventory" action="../php/addproduct.php" method="POST">
                     <div class="addform">
                     <label>Category:</label>
                     <select name="product_kind" style="width:80px;">
-                                        <option></option>
+                                        <option>cakes</option>
+                                        <option>cookies</option>
+                                        <option>chocolates</option>
+                                        <option>icecream</option>
                                     </select></br>
                     </div>
                     

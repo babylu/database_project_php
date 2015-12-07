@@ -29,7 +29,7 @@ and open the template in the editor.
             <div class="menuAdmin">
             <ul>
                 <li><a href="adminEmployee.php">Employee</a></li>
-                <li><a href="adminStore.php">Store & Region</a></li>
+                <li><a href="adminStore.php">Store</a></li>
                 <li><a href="adminStock.php">Inventory</a></li>
                 <li><a href="adminDetail.php">Sales Status</a></li>
                 <li><a href="adminStatistic.php">Statistic</a></li>
@@ -118,7 +118,7 @@ and open the template in the editor.
     <div class="showTable">
                      
                          <center>
-                <form name="getemployee" action="" method="POST">
+                             <form name="getemployee" action="../php/addemployee.php" method="POST">
                     <table class="viewTable">
                         <tr>
                             <td>
@@ -160,7 +160,18 @@ and open the template in the editor.
                                     <td>
                                 <label>Store Region:</label>
                                     <select name="store_region" style="width:80px;">
-                                        <option></option>
+                                        <?PHP
+                                    $con = mysql_connect("localhost","root","root");
+                                    if (!$con){
+                                        die('Could not connect: ' . mysql_error());
+                                }
+                                    mysql_select_db("E-commerce", $con);
+                                    $sql="select store_id from store";
+                                    $result=  mysql_query($sql);
+                                    while($row=  mysql_fetch_array($result)){
+                                        echo "<option>".$row[store_id]."<option>";
+                                    }
+                                        ?>
                                     </select>
                                     </td>
                                 </tr>
