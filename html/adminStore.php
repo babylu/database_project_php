@@ -229,27 +229,29 @@ and open the template in the editor.
                                     <th >Manager ID</th>
                                     <th >Total Employee</th>
                                     <th >Region ID</th>
+                                    <th >Modify</th>
                                     
                                 </tr>
                             </thead>
+                            <form name="modifyStore" action="" method="POST">
                             <tr>
                                 <td>
                                     <label>01</label>
                                 </td>                               
                                 <td>
-                                    <input type="text" value="3162 Bohem St" style="width: 90px;">
+                                    <input type="text" name="address_street" value="3162 Bohem St" style="width: 90px;">
                                 </td>
                                 <td>
-                                    <input type="text" value="Pittsburgh" style="width: 60px;">
+                                    <input type="text" name="address_city" value="Pittsburgh" style="width: 60px;">
                                 </td>
                                 <td>
-                                    <input type="text" value="PA" style="width: 30px;">
+                                    <input type="text" name="address_state" value="PA" style="width: 30px;">
                                 </td>
                                 <td>
-                                    <input type="text" value="15213" style="width: 60px;">
+                                    <input type="text" name="address_zipcode" value="15213" style="width: 60px;">
                                 </td>                            
                                 <td>
-                                    <input type="text" value="21" style="width: 30px;">
+                                    <input type="text" name="manager_id" value="21" style="width: 30px;">
                                 </td>
                                 <td>
                                     <label>1</label>
@@ -258,12 +260,16 @@ and open the template in the editor.
                                     <select name="region_id" style="width:50px;">
                                         <option value ="01">01</option>
                                     </select>
-                                </td>                                
+                                </td>  
+                                <td>
+                                        <button type="submit" value="change" style="width:50px; height:20px;">change</button>
+                                    </td>
                             </tr>
+                            </form>
                             <tbody>                                    
                             </tbody>
                         </table>
-                       <input type="submit" value="Save Changes" class="buttonStyle"> 
+                       
                     </center>
                 
                     
