@@ -19,6 +19,7 @@ $db = mysql_connect("localhost","root","root") or die("fail to connect database"
         $sql = "select * from customer where customer_id= '$name' and password = '$password' limit 1";
         $result = mysql_query($sql);
         while($check =  mysql_fetch_array($result)){
+            session_start();
             $_SESSION['customer_id']= $name;
             $_SESSION['username']= $check['name'];
             echo "<script>alert('login success')</script>";

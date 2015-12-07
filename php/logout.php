@@ -5,8 +5,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-if($_POST['require']){
     session_start();
-    session_destory();
-}
+    
+    $_SESSION = array();
+
+
+    if (ini_get("session.use_cookies")) {
+        $params = session_get_cookie_params();
+        setcookie(session_name(), '', time() - 42000,
+            $params["path"], $params["domain"],
+            $params["secure"], $params["httponly"]
+        );
+    }
+
+
+    session_destroy();
 ?>

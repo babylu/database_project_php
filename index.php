@@ -75,8 +75,12 @@ and open the template in the editor.
             <div>PHONE: 412-***-****</div>
         </div>
     </div>
-    <?php
+<?php
 
-    ?>
+if($_POST['require']){
+
+    session_destory();
+}
+?>
 </body>
 </html>
