@@ -63,7 +63,7 @@ and open the template in the editor.
                                                     FROM  transaction T, salesperson SA, store ST, region R
                                                     where T.salesperson_id = SA.salesperson_id and SA.store_id = ST.store_id and ST.region_id = R.region_id 
                                                     group by R.region_id
-                                                    HAVING total >= ANY(
+                                                    HAVING total >= ALL(
                                                             select sum(product_price) 
                                                             FROM transaction T, salesperson SA, store ST, region R
                                                             where T.salesperson_id = SA.salesperson_id and SA.store_id = ST.store_id and ST.region_id = R.region_id 
@@ -76,7 +76,7 @@ and open the template in the editor.
                                                     WHERE customer_id in (
                                                             SELECT customer_id FROM business)
                                                     GROUP BY customer_id
-                                                    HAVING sum(product_price) >= ANY(
+                                                    HAVING sum(product_price) >= ALL(
                                                             select sum(product_price) from transaction GROUP BY customer_id);");
                             while($row = mysql_fetch_array($result3)){
                                 $topBusiness = htmlentities($row["name"]);
