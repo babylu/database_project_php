@@ -77,7 +77,10 @@ and open the template in the editor.
                                                             SELECT customer_id FROM business)
                                                     GROUP BY customer_id
                                                     HAVING sum(product_price) >= ALL(
-                                                            select sum(product_price) from transaction GROUP BY customer_id);");
+                                                            select sum(product_price) from transaction 
+                                                            WHERE customer_id in (
+                                                                    SELECT customer_id FROM business) 
+                                                            GROUP BY customer_id);");
                             while($row = mysql_fetch_array($result3)){
                                 $topBusiness = htmlentities($row["name"]);
                             }

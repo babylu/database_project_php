@@ -35,7 +35,7 @@ and open the template in the editor.
                 <img id="searchIcon" alt="searchIcon" src="../img/searchIcon20.jpeg"  onclick="window.location.href='searchResult.php'">
             </div>
             <ul id="menu" class="menu">
-                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.php">Home</a></li>
                 <li><a href="iceCream.php">Ice Creams</a></li>
                 <li><a href="cake.php">Cakes</a></li>
                 <li><a href="chocolate.php">Chocolates</a></li>
@@ -71,9 +71,9 @@ and open the template in the editor.
                                     echo"<td>" . htmlentities($row["amount"]) . "</td>";
                                     echo"<td>" . htmlentities($row["price"]) . "</td>";
                                     echo"<td>"
-                                        . "<form action='../php/buyProduct.php'>"
+                                        . "<form action='../php/buyProduct.php' method='post'>"
                                                 . "<input type='text' name='number'><input type='hidden' name='product_id' value='".htmlentities($row["product_id"])."'><button type='submit'>Buy</button>"
-                                        . "</form></td>"; 
+                                        . "</form></td>";
                                     echo "</tr>";
                                 }
                                 

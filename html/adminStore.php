@@ -19,8 +19,6 @@ and open the template in the editor.
             <img class="title" alt="title" src="../img/title.jpg">
             <div class="option">
                 <div id="username" class="username"><a href="./logIn.php">Log Out</a></div>
-                <input id="searchInput" type="text" placeholder=" search" style='font-size:13px;'>
-                <img id="searchIcon" alt="searchIcon" src="../img/searchIcon20.jpeg">
             </div>            
         </div>
         <div class="body">

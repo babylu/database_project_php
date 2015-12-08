@@ -24,8 +24,13 @@ if($customer_id==''){
 }
 
 //check input number
+if(preg_match("/[0-9]+/",$_POST['number']) == 0){
+    echo "<script>alert('input error!');</script>";
+    echo "<script>window.history.go(-1);</script>";
+    exit();
+}
 $number = intval($_POST['number']);
-if($number<=0){
+if($number <= 0){
     echo "<script>alert('Input Wrong Number!');</script>";
     echo "<script>window.history.go(-1);</script>";
     exit();
