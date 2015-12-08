@@ -189,20 +189,24 @@ and open the template in the editor.
                                     <label id='productId'>".htmlentities($row[product_id])." </label>
                                     <input type='hidden' name='id' value=".htmlentities($row[product_id]).">
                                 </td>";
-                                echo"<td><input type='text' name='name' value='Cheesecake' style='width: 80px;'>
-                                </td>
+                                echo"<td><input type='text' name='name' value=" .htmlentities($row[name]). "style='width: 80px;' required>
+                                </td>";
+                                echo"<td><input type='text' name='amount' value=" .htmlentities($row[amount]). "style='width: 80px;' required>
+                                </td>";
+                                echo"
                                 <td>
-                                    <input type='text' name='amount' value='' style='width: 30px;'>
-                                </td>
-                                <td>
-                                    <input type='text' name='price' value='' style='width: 30px;'>
-                                </td>
+                                    <input type='text' name='price' value=".htmlentities($row[price])." style='width: 30px;' required>
+                                </td>";
+                                echo"
                                 <td>
                                     <select name='Category' style='width:80px;'>
-                                        <option value='cake'>Cake</option>
+                                        <option value='chocolates'>chocolates</option>
+                                        <option value='cake'>cake</option>
+                                        <option value='icecream'>icecream</option>
+                                        <option value='cookies'>cookies</option>
                                     </select>
-                                </td>
-                                <td>
+                                </td>";
+                                echo"<td>
                                         <button type='submit' value='change' style='width:50px; height:20px;'>change</button>
                                     </td> ";
                                 echo"</tr>";
