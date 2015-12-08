@@ -20,13 +20,12 @@ if(!$con)
                 $ordernumber = (int)date(ydmhis);
                 $sqlSelectFromProduct = "select * from product where product_id=$product_id";
                 $result=mysqli_query($con, $sqlSelectFromProduct);
-                while($row =  mysqli_fetch_array($result)){
-                    echo "<script>alert('success');</script>";
+                while($row =  mysqli_fetch_array($result)){                    
                     if($row['amount']>0){
-                        $price = $row['price'] * $number;
-                        echo "<script>alert('$price');</script>";
+                        $price = $row['price'] * $number;       
                     }else{
                         echo "<script>alert('product sold out');</script>";
+                        echo "<script>window.location.href = 'http://localhost:8888/database_project_php/index.php';</script>";
                         exit();
            } 
            
