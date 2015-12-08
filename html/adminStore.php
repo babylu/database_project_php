@@ -25,206 +25,135 @@ and open the template in the editor.
         </div>
         <div class="body">
             <div class="left">
-            <div class="menuAdmin">
-            <ul>
-                <li><a href="adminEmployee.php">Employee</a></li>
-                <li><a href="adminStore.php">Store</a></li>
-                <li><a href="adminStock.php">Inventory</a></li>
-                <li><a href="adminDetail.php">Sales Status</a></li>
-                <li><a href="adminStatistic.php">Statistic</a></li>                
-            </ul>
-            </div>
+                <div class="menuAdmin">
+                <ul>
+                    <li><a href="adminEmployee.php">Employee</a></li>
+                    <li><a href="adminStore.php">Store</a></li>
+                    <li><a href="adminStock.php">Inventory</a></li>
+                    <li><a href="adminDetail.php">Sales Status</a></li>
+                    <li><a href="adminStatistic.php">Statistic</a></li>                
+                </ul>
+                </div>
             </div>
             <div class="right">
                 <div id="navHead" class="navHead" style="display:block">
                     <div id="navHead" class="navHead" style="display:block">
                     <input type="radio" name="StoreOption" id="view" value="view" checked="">View
                     <input type="radio" name="StoreOption" id="add" value="add">Add
-                    
                 </div>
                 </div>
-<!--            show view store part-->
+<!--show view store part-->
                 <div id="viewOption">
-                
-                <div class="showForm">                                      
-                    <center>
-                        <table class="viewTable">
-                            
-                            <thead>
-                                <tr>
-                                    <th >Store ID</th>
-                                    
-                                    <th >Street</th>
-                                    <th >City</th>
-                                    <th >State</th>
-                                    <th >Zip Code</th>
-                                   
-                                    <th >Manager ID</th>
-                                    <th >Total Employee</th>
-                                    <th >Region ID</th>
-                                    
-                                </tr>
-                            </thead>
-                            
-                            <tbody>  
-                                <?php
-                                $con = mysql_connect("localhost","root","root");
-                                if (!$con){
-                                    die('Could not connect: ' . mysql_error());
-                                }
-                                mysql_select_db("e-commerce", $con);
-                                $result = mysql_query("select * from store");
-                                while($row = mysql_fetch_array($result)){
-                                    echo"<tr><td>" . htmlentities($row["store_id"]) . "</td>";
-                                    echo"<td>" . htmlentities($row["address_street"]) . "</td>";
-                                    echo"<td>" . htmlentities($row["address_city"]) . "</td>";
-                                    echo"<td>" . htmlentities($row["address_state"]) . "</td>";
-                                    echo"<td>" . htmlentities($row["address_zipcode"]) . "</td>";
-                                    echo"<td>" . htmlentities($row["manager_id"]) . "</td>";
-                                    echo"<td>" . htmlentities($row["number_salesperson"]) . "</td>";
-                                    echo"<td>" . htmlentities($row["region_id"]) . "</td>";
-                                    echo "</tr>";
-                                }
-                                mysql_close($con);
-                             ?>
-                            </tbody>
-                        </table>
-                        
-                    </center>
-                
-                    
-                </div>
-                    </div>
-<!--                <div class="search">
-               
-   
-                <label style="margin-left: 15px;">Find store information</label>
-                                <div class="searchRegion" >
-                                    <input type="text" name="region_name" value="" placeholder=" type region name" >
-                                    <button class="buttonStyle">Search </button>
-                                </div>
-                    
-             
-            </div>
-                <div class="showForm">
-                    <div class="quantity">
-                        <label>Show</label> 
-                        <select id="showQuantity">
-                            <option value ="10">10</option>
-                            <option value ="20">20</option>
-                            <option value="30">30</option>
-                            <option value="all">all</option>
-                        </select>
-                        <label>Entities</label> 
-                    </div>
-                    <center>
-                        <table class="viewTable">
-                            
-                            <thead>
-                                <tr>
-                                    <th >Region ID</th>
-                                    <th >Region Name</th>
-                                    <th >Manager ID</th>
-                                    
-                                    
-                                    
-                                    
-                                </tr>
-                            </thead>
-                            <tr>
-                                <td>02</td>
-                                <td>Pittsburgh Area</td>
-                                <td>21</td>
-                                
-                                
-                                
-                            </tr>
-                          
-                        </table>
-                    </center>
-                    
-                    
-                    
-                </div>-->
-
-<!--            show add store part-->
-            <div id="addOption">
-                
-                <div class="showTable">
-                     
-                         <center>
-                             <form name="getStore" action="../php/addstore.php" method="POST">
-                    <table class="viewTable">
-                        <tr>
-                            <td>
-                                <label>Region ID:</label>
-                                    <select name="region_id" style="width:80px;">
-                                       <?PHP
+                    <div class="showForm">                                      
+                        <center>
+                            <table class="viewTable">
+                                <thead>
+                                    <tr>
+                                        <th >Store ID</th>
+                                        <th >Street</th>
+                                        <th >City</th>
+                                        <th >State</th>
+                                        <th >Zip Code</th>
+                                        <th >Manager ID</th>
+                                        <th >Total Employee</th>
+                                        <th >Region ID</th> 
+                                    </tr>
+                                </thead>
+                                <tbody>  
+                                    <?php
                                     $con = mysql_connect("localhost","root","root");
                                     if (!$con){
                                         die('Could not connect: ' . mysql_error());
-                                }
-                                    mysql_select_db("E-commerce", $con);
-                                    $sql="select region_id from region";
-                                    $result=  mysql_query($sql);
-                                    while($row=  mysql_fetch_array($result)){
-                                        echo "<option>".$row[region_id]."<option>";
                                     }
-                                        ?>
-                                    </select>
-                                    </td>
-                            <td>
-                                <label>Street:</label>
-                                <input type="text" name="street" value=""></br>
-                            </td>
-                            <td>
-                                <label>City:</label>
-                                <input type="text" name="city" value=""></br>
-                            </td>
-                        </tr>
+                                    mysql_select_db("e-commerce", $con);
+                                    $result = mysql_query("select * from store");
+                                    while($row = mysql_fetch_array($result)){
+                                        echo"<tr><td>" . htmlentities($row["store_id"]) . "</td>";
+                                        echo"<td>" . htmlentities($row["address_street"]) . "</td>";
+                                        echo"<td>" . htmlentities($row["address_city"]) . "</td>";
+                                        echo"<td>" . htmlentities($row["address_state"]) . "</td>";
+                                        echo"<td>" . htmlentities($row["address_zipcode"]) . "</td>";
+                                        echo"<td>" . htmlentities($row["manager_id"]) . "</td>";
+                                        echo"<td>" . htmlentities($row["number_salesperson"]) . "</td>";
+                                        echo"<td>" . htmlentities($row["region_id"]) . "</td>";
+                                        echo "</tr>";
+                                    }
+                                    mysql_close($con);
+                                 ?>
+                                </tbody>
+                            </table>
+                        </center>
+                    </div>
+                </div>
+
+<!--show add store part-->
+            <div id="addOption">
+                <div class="showTable"> 
+                    <center>
+                        <form name="getStore" action="../php/addstore.php" method="POST">
+                            <table class="viewTable">
                                 <tr>
                                     <td>
-                                <label>State:</label>
-                                <input type="text" name="state" value=""></br> 
+                                        <label>Region ID:</label>
+                                        <select name="region_id" style="width:80px;">
+                                           <?PHP
+                                                $con = mysql_connect("localhost","root","root");
+                                                if (!$con){
+                                                    die('Could not connect: ' . mysql_error());
+                                                }
+                                                mysql_select_db("E-commerce", $con);
+                                                $sql="select region_id from region";
+                                                $result=  mysql_query($sql);
+                                                while($row=  mysql_fetch_array($result)){
+                                                    echo "<option value='". $row[region_id] ."'>".$row[region_id]."</option>";
+                                                }
+                                            ?>
+                                        </select>
                                     </td>
                                     <td>
-                                <label>Zip Code:</label>
-                                <input type="text" name="zipcode" value=""></br>
+                                        <label>Street:</label>
+                                        <input type="text" name="street" value=""></br>
+                                    </td>
+                                    <td>
+                                        <label>City:</label>
+                                        <input type="text" name="city" value=""></br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>State:</label>
+                                        <input type="text" name="state" value=""></br> 
+                                    </td>
+                                    <td>
+                                        <label>Zip Code:</label>
+                                        <input type="text" name="zipcode" value=""></br>
                                     </td>
                                     <td>
                                         <label>Manager ID:</label>
-                                    <select name="manager_id" style="width:80px;">
-                                       <?PHP
-                                    $con = mysql_connect("localhost","root","root");
-                                    if (!$con){
-                                        die('Could not connect: ' . mysql_error());
-                                }
-                                    mysql_select_db("E-commerce", $con);
-                                    $sql="select salesperson_id from store";
-                                    $result=  mysql_query($sql);
-                                    while($row=  mysql_fetch_array($result)){
-                                        echo "<option>".$row[store_id]."<option>";
-                                    }
-                                        ?>
-                                    </select>
+                                        <select name="manager_id" style="width:80px;">
+                                           <?PHP
+                                                $con = mysql_connect("localhost","root","root");
+                                                if (!$con){
+                                                    die('Could not connect: ' . mysql_error());
+                                                }
+                                                mysql_select_db("E-commerce", $con);
+                                                $sqlSelectStore = "select salesperson_id from salesperson";
+                                                $resultSelectStore =  mysql_query($sqlSelectStore);
+                                                while($row=  mysql_fetch_array($resultSelectStore)){
+                                                    echo "<option value='". $row[salesperson_id] ."'>".$row[salesperson_id]."</option>";
+                                                }
+                                            ?>
+                                        </select>
                                     </td>
                                 </tr>
-                                
-                    </table>    
-                    </br>
-                    
-                                <input type="submit" value="Add New Store" class="buttonStyle">
-                                
-      
-                            
-                            
+                            </table>    
+                            <br>
+                            <button type="submit" class="buttonStyle">Add New Store</button>
                         </form>
-                             </center>
+                    </center>
                 </div>
             </div>
-
-            
-</div>
+        </div>
         <div class="footer">
             <div>Copyright &copy; Delicious Dessert Inc. All Right Reserved.</div>
             <div>ADDRESS: </div>
@@ -232,9 +161,6 @@ and open the template in the editor.
             <div>PHONE: 412-***-****</div>
         </div>
     </div>
-    <?php
-
-    ?>
 </body>
 </html>
 

@@ -54,23 +54,24 @@ while($row =  mysqli_fetch_array($result)){
     }          
 }     
 
-
+//select salesperson
 $sqlSelectSalesperson = "select salesperson_id from salesperson where store_id <>''";
 $resultSelectSalesperson=mysqli_query($con, $sqlSelectSalesperson);
 $flag = 0;
 while($row =  mysqli_fetch_array($resultSelectSalesperson)){  
-    $salespersonList[flag] = $row['salesperson_id'];
+    $salespersonList[$flag] = $row['salesperson_id'];   
     $flag = $flag +1;
 }
 $position= rand(0,$flag);
 $salesperson = $salespersonList[$position];
-echo $salesperson;
+
+
 
 //everything is right, update database
-$ordernumber = (int)date(ydmhis);
-$sqlUpdateTransaction = "INSERT INTO transaction(order_number,product_price,product_quantity,product_id,customer_id)"
-        ."VALUES ('$ordernumber','$price','$number','$product_id','$customer_id')";
-$sqlUpdateProduct ="UPDATE product set amount=amount-$number where product_id=$product_id;";
+$ordernumber = date(ydmhis);
+$sqlUpdateTransaction = "INSERT INTO transaction(order_number,product_price,product_quantity,product_id,customer_id,salesperson_id)"
+        ."VALUES ('$ordernumber','$price','$number','$product_id','$customer_id','$salesperson')";
+$sqlUpdateProduct ="UPDATE product set amount = amount-$number where product_id=$product_id;";
 if(mysqli_query($con,$sqlUpdateTransaction)){
    echo "<script>alert('Buy success');</script>";
 }else{

@@ -6,7 +6,6 @@
 
 $(function(){
     $('#business').hide();
-    $('#home').hide();
     $('#homeRadio').click(function(){
         $('#home').show();
         $('#business').hide();
