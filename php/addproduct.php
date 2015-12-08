@@ -10,13 +10,17 @@
                     die('Could not connect: ' . mysql_error());
  }
                 mysql_select_db("e-commerce", $con);
+                
                 $product_id=date(ymdhis);
+                
                 $sql="INSERT INTO product (product_id,name,amount,price,kind)"
                     ."values('$product_id','$_POST[InventoryName]','$_POST[amount]','$_POST[price]','$_POST[product_kind]')";
                 if(mysql_query($sql)){
                    echo "<script>alert('product added');</script>";
+//                   echo "<script>window.history.go(-1);</script>";
                 }else{
-                   echo "<script>alert('product added failed');</script>".mysql_error();
+                   echo "<script>alert('product added failed'".mysql_error().");</script>";
+                   echo "<script>window.history.go(-1);</script>";
                 }
                 
                    

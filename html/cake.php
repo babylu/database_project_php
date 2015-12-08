@@ -48,16 +48,6 @@ and open the template in the editor.
             <center>
                 <fieldset form="iceCreamList">
                     <legend>Cake</legend>
-                    <div class="quantity">
-                        <label>Show</label> 
-                        <select id="showQuantity">
-                            <option value ="10">10</option>
-                            <option value ="20">20</option>
-                            <option value="30">30</option>
-                            <option value="all">all</option>
-                        </select>
-                        <label>Entities</label> 
-                    </div>
                     <table class="itemShowTable">
                         <tr>
                             <th>Item Name</th>

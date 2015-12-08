@@ -59,14 +59,15 @@ and open the template in the editor.
                             while($row = mysql_fetch_array($result1)){
                                 $topKind = htmlentities($row["kind"]);
                             }
-                            $result2 = mysql_query("select P.kind
-                                                    from transaction T natural join product P 
-                                                    group by P.kind 
-                                                    having sum(product_price) >= any(
+                            $result2 = mysql_query("SELECT R.name
+                                                    FROM  transaction T, salesperson SA, store ST, region R
+                                                    where T.salesperson_id = SA.salesperson_id and SA.store_id = ST.store_id and ST.region_id = R.region_id 
+                                                    group by R.region_id
+                                                    HAVING sum(product_price) >= ANY(
                                                         select sum(product_price) 
-                                                        from transaction T natural join product P 
-                                                        group by P.kind);");
-                            echo $result2;
+                                                        FROM transaction T, salesperson SA, store ST, region R
+                                                        where T.salesperson_id = SA.salesperson_id and SA.store_id = ST.store_id and ST.region_id = R.region_id 
+                                                    );");
                             while($row = mysql_fetch_array($result2)){
                                 $topRegion = htmlentities($row["name"]);
                             }
