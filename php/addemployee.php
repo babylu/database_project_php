@@ -24,12 +24,12 @@ if($_POST[salesman_name]==''){
     echo "<script>window.history.go(-1);</script>";
     exit();
 }
-if(preg_match("/[0-9]+/",$_POST[zipcode]) == 1 && strlen($_POST[zipcode])!=5){
+if(preg_match("/[0-9]+/",$_POST[zipcode]) == 0 || strlen($_POST[zipcode])!=5){
     echo "<script>alert('Zipcode input error!');</script>";
     echo "<script>window.history.go(-1);</script>";
     exit();
 }
-if(preg_match("/[0-9]+/",$_POST[salary]) == 1 && strlen($_POST[zipcode])!=10){
+if(preg_match("/[0-9]+/",$_POST[salary]) == 0 || strlen($_POST[salary]) > 10){
     echo "<script>alert('Salary input error!');</script>";
     echo "<script>window.history.go(-1);</script>";
     exit();
@@ -48,12 +48,27 @@ $sqlInsertSalesperson="INSERT INTO salesperson (salesperson_id,name,address_stre
       values ('$_POST[salesman_email]','$_POST[salesman_name]','$_POST[street]','$_POST[city]','$_POST[state]','$_POST[zipcode]','$_POST[salesman_email]','$_POST[job_title]','$_POST[salary]','$_POST[store_id]')";
 
 $referer = "http://localhost:8888/database_project_php/html/adminEmployee.php";
+
+
 if (mysql_query($sqlInsertSalesperson)) {  
-    echo "<script>alert('add success');</script>";
-    echo "<script>window.location.href = 'http://localhost:8888/database_project_php/html/adminEmployee.php';</script>";
+    echo "<script>alert('add new employee success');</script>";
 } else {
     echo "<script>alert(\"" . mysqli_error($con) . "\");window.location.href=\"" . $referer . "\";</script>";
 }
 
+if($_POST[store_id]!=''){
+    $sqlSelectStore = "Select number_salesperson from store where store_id = $_POST[store_id]";
+    $resultSelectStore = mysql_query($sqlSelectStore);
+    while($row =  mysql_fetch_array($resultSelectStore)){
+        $number = $row[number_salesperson]+1;
+    }
+    $sqlUpdateStore = "update store set number_salesperson = $number where store_id = $_POST[store_id]";
+    if (mysql_query($sqlUpdateStore)) {  
+        echo "<script>alert('update number_salesperson success');</script>";
+    } else {
+        echo "<script>alert(\"" . mysqli_error($con) . "\");window.location.href=\"" . $referer . "\";</script>";
+    }
+}
+echo "<script>window.location.href = 'http://localhost:8888/database_project_php/html/adminEmployee.php';</script>";
 
 ?>

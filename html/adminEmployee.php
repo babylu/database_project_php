@@ -136,6 +136,7 @@ and open the template in the editor.
                                         <td>
                                             <label>Store Id:</label>
                                             <select name="store_id" style="width:80px;">
+                                                <option value=""></option>
                                                 <?PHP
                                                 //add select option
                                                     $con2 = mysql_connect("localhost","root","root");
