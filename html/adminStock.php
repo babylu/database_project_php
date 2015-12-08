@@ -88,9 +88,9 @@ and open the template in the editor.
                             <div class="addform">
                                 <label>Category:</label>
                                 <select name="product_kind" style="width:80px;">
-                                    <option value="cakes">cakes</option>
-                                    <option value="cookies">cookies</option>
-                                    <option value="chocolates">chocolates</option>
+                                    <option value="cake">cakes</option>
+                                    <option value="cookie">cookies</option>
+                                    <option value="chocolate">chocolates</option>
                                     <option value="icecream">icecream</option>
                                 </select></br>
                             </div>
@@ -152,7 +152,7 @@ and open the template in the editor.
                                         echo "<td><select name='product_kind' style='width:80px;'>
                                                 <option value='".$row[kind]."'>".$row[kind] ."
                                                 <option>cakes</option>
-                                                <option>cookies</option>
+                                                <option>cookie</option>
                                                 <option>chocolates</option>
                                                 <option>icecream</option>
                                             </select></td>";
