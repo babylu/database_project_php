@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Ice Cream</title>
+<title>Cookies</title>
 <script type="text/javascript" src="../jquery-2.1.4.js"></script>
 <script type="text/javascript" src="../main.js"></script>
 <script type="text/javascript" src="../js/searchItem.js"></script>

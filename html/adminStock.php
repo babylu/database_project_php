@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Hello World!</title>
+<title>Admin Stock</title>
 <script src="../js/jquery-1.9.0.min.js" type="text/javascript"></script>
 <link rel="stylesheet" href="../css/common.css" type="text/css">
 <link href="../css/admin.css" rel="stylesheet" type="text/css"/>
@@ -169,7 +169,7 @@ and open the template in the editor.
 
         <div class="footer">
             <div>Copyright &copy; Delicious Dessert Inc. All Right Reserved.</div>
-            <div>ADDRESS: </div>
+            <div>ADDRESS: 4200 Fifth Ave, Pittsburgh, PA 15213</div>
             <div>EMAIL: DeliciousDessertInc@gmail.com</div>
             <div>PHONE: 412-***-****</div>
         </div>

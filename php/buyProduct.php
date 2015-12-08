@@ -73,14 +73,15 @@ $sqlUpdateTransaction = "INSERT INTO transaction(order_number,product_price,prod
         ."VALUES ('$ordernumber','$price','$number','$product_id','$customer_id','$salesperson')";
 $sqlUpdateProduct ="UPDATE product set amount = amount-$number where product_id=$product_id;";
 if(mysqli_query($con,$sqlUpdateTransaction)){
-   echo "<script>alert('Buy success');</script>";
+   echo "<script>alert('Buy success!   Your salesperson is ".$salesperson.".   Order number is ".$ordernumber."');</script>";
+   if(mysqli_query($con, $sqlUpdateProduct)){
+        echo "<script>alert('product update success');</script>";
+        echo "<script>window.location.href = '$referer';</script>";
+    }else{
+        echo  "<script>alert(\"" . mysqli_error($con) . "\");window.location.href=\"" . $referer . "\";</script>";
+    }
 }else{
    echo  "<script>alert(\"" . mysqli_error($con) . "\");window.location.href=\"" . $referer . "\";</script>";
 }
-if(mysqli_query($con, $sqlUpdateProduct)){
-    echo "<script>alert('product update success');</script>";
-    echo "<script>window.location.href = '$referer';</script>";
-}else{
-    echo  "<script>alert(\"" . mysqli_error($con) . "\");window.location.href=\"" . $referer . "\";</script>";
-}
+
 ?>

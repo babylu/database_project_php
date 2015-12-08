@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Hello World!</title>
+<title>Delicious INC Home Page</title>
 <script type="text/javascript" src="jquery-2.1.4.js"></script>
 <script type="text/javascript" src="./jquery-ui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="main.js"></script>

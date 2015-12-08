@@ -26,17 +26,16 @@ $db = mysql_connect("localhost","root","root") or die("fail to connect database"
             echo "<script>window.location.href = 'http://localhost:8888/database_project_php/index.php'</script>";
         }
     }
-    else{
+    else if ($_POST['type']=='Admin'){
         $sql = "select * from admin_user where username= '$name' and password = '$password' limit 1";
         $result = mysql_query($sql);
         while($check =  mysql_fetch_array($result)){
             echo "<script>alert('login success')</script>";
-            echo "<script>window.location.href = 'http://localhost:8888/database_project_php/html/adminDetail.php'</script>";
+            echo "<script>window.location.href = 'http://localhost:8888/database_project_php/html/adminEmployee.php'</script>";
         }
     }
     
-    while(!$check =  mysql_fetch_array($result)){
-        echo "<script>alert('login fail')</script>";
-        echo "<script>window.location.href = 'http://localhost:8888/database_project_php/html/logIn.php'</script>";
-    }
+    echo "<script>alert('login fail')</script>";
+    echo "<script>window.location.href = 'http://localhost:8888/database_project_php/html/logIn.php'</script>";
+
  ?>

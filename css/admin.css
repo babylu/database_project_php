@@ -42,13 +42,13 @@ background-color:#fdf6fd;
 
 .left{
     width:220px;
-    min-height: 700px;
+    min-height: 800px;
     float:left;
     background-color: #fbecfb;
 }
 .right{
     width:740px;
-    min-height: 700px;
+    min-height: 800px;
     float:right;
     background-color: #fdf6fd;
 }

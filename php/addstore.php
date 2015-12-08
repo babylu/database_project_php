@@ -27,5 +27,6 @@ if(mysql_query($sql)){
 }else{
     echo "<script>alert('store added failed');</script>".mysql_error();
 }
+
 mysql_close();  
 ?>           

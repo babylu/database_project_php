@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
 <head>
 <meta charset="UTF-8">
-<title>personal page</title>
+<title>Personal Page</title>
 <script type="text/javascript" src="../jquery-2.1.4.js"></script>
 <script type="text/javascript" src="../js/personalPage.js"></script>
 <script type="text/javascript" src="../main.js"></script>
@@ -99,23 +99,23 @@ and open the template in the editor.
                     ?>
                         <div>
                             <label>Name: </label>
-                            <input type="text" name="name" value="<?php echo $name;?>">
+                            <input type="text" name="name" value="<?php echo $name;?>" required>
                         </div>
                         <div>
                             <label>Street: </label>
-                            <input type="text" name="address_street" value="<?php echo $address_street;?>">
+                            <input type="text" name="address_street" value="<?php echo $address_street;?>" required>
                         </div>
                         <div>
                             <label>City: </label>
-                            <input type="text" name="address_city" value="<?php echo $address_city;?>">
+                            <input type="text" name="address_city" value="<?php echo $address_city;?>" required>
                         </div>
                         <div>
                             <label>State: </label>
-                            <input type="text" name="address_state" value="<?php echo $address_state;?>">
+                            <input type="text" name="address_state" value="<?php echo $address_state;?>" required>
                         </div>
                         <div>
                             <label>Zipcode: </label>
-                            <input type="text" name="address_zipcode" value="<?php echo $address_zipcode;?>">
+                            <input type="text" name="address_zipcode" value="<?php echo $address_zipcode;?>" required>
                         </div>
                         <div>
                             <label>User Type: </label>
