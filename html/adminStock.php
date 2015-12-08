@@ -176,7 +176,7 @@ and open the template in the editor.
                                     
                                 </tr>
                             </thead>
-                            <form name="addInventory" action="../php/modifyproduct.php" method="POST">
+                            
                             <?php
                             $con = mysql_connect("localhost","root","root");
                             if (!$con){
@@ -185,37 +185,30 @@ and open the template in the editor.
                             mysql_select_db("e-commerce", $con);
                             $result = mysql_query("select * from product");
                             while ($row = mysql_fetch_array($result)) {
+                                echo "<form name='addInventory' action='../php/modifyproduct.php' method='POST'>";
                                 echo"<tr><td>
                                     <label id='productId'>".htmlentities($row[product_id])." </label>
-                                    <input type='hidden' name='id' value=".htmlentities($row[product_id]).">
+                                    <input type='hidden' name='id' value='".htmlentities($row[product_id])."'>
                                 </td>";
-                                echo"<td><input type='text' name='name' value=" .htmlentities($row[name]). "style='width: 80px;' required>
+                                echo"<td><input type='text' name='name' value='" .htmlentities($row[name]). "' style='width: 80px;' required>
                                 </td>";
-                                echo"<td><input type='text' name='amount' value=" .htmlentities($row[amount]). "style='width: 80px;' required>
-                                </td>";
-                                echo"
-                                <td>
-                                    <input type='text' name='price' value=".htmlentities($row[price])." style='width: 30px;' required>
+                                echo"<td><input type='text' name='amount' value='" .htmlentities($row[amount]). "' style='width: 80px;' required>
                                 </td>";
                                 echo"
                                 <td>
-                                    <select name='Category' style='width:80px;'>
-                                        <option value='chocolates'>chocolates</option>
-                                        <option value='cake'>cake</option>
-                                        <option value='icecream'>icecream</option>
-                                        <option value='cookies'>cookies</option>
-                                    </select>
+                                    <input type='text' name='price' value='".htmlentities($row[price])."' style='width: 30px;' required>
                                 </td>";
+                                
                                 echo"<td>
                                         <button type='submit' value='change' style='width:50px; height:20px;'>change</button>
                                     </td> ";
-                                echo"</tr>";
+                                echo"</tr></form>";
                             }
                                   ?>
                                 
                                                        
                             
-                            </form>
+                            
                           
                         </table>
                         
