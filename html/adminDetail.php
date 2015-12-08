@@ -44,7 +44,7 @@ and open the template in the editor.
                                 <label for="name"><?php echo $name; ?></label>-->
                    <ul>
                    <li>
-                       <strong>Top</strong> profit of the products: 
+                       <strong>Total</strong> profit of the products: 
                        <label class="showLabel">$8888</label>
                    </li>
                    <li>
