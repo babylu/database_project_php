@@ -63,7 +63,7 @@ if($_POST[store_id]!=''){
         $number = $row[number_salesperson]+1;
     }
     $sqlUpdateStore = "update store set number_salesperson = $number where store_id = $_POST[store_id]";
-    if (mysql_query($sqlUpdateStore)) {  
+    if(mysql_query($sqlUpdateStore)) {  
         echo "<script>alert('update number_salesperson success');</script>";
     } else {
         echo "<script>alert(\"" . mysqli_error($con) . "\");window.location.href=\"" . $referer . "\";</script>";
