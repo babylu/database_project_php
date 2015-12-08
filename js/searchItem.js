@@ -6,7 +6,6 @@
 $(function(){
     $('#searchIcon').click(function(){
         var searchInfo = $('#searchInput').val();
-        var searchInfoList = searchInfo.splite(' ');
         window.location.href='http://localhost:8888/database_project_php/html/searchResult.php'+'?'+searchInfo;
     });
 });
