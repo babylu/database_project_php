@@ -36,10 +36,13 @@ and open the template in the editor.
                 
         </div>
         <div class="right">
-           <div id="navHead" class="navHead" style="display:block">Statistic</div> 
-           <div>
-                <canvas id="chart-area" width="600" height="600" style="width: 300px; height: 300px;"></canvas>
-           </div>
+            <div id="navHead" class="navHead" style="display:block">Statistic</div> 
+            <div>
+                <center>
+                <canvas id="gender" width="300" height="300" style="margin-top: 20px; width: 300px; height: 300px;"></canvas>
+                <center>
+                <span>Radio of gender in our customers</span>
+            </div>
         </div>
 
         <div class="footer">
@@ -49,44 +52,43 @@ and open the template in the editor.
             <div>PHONE: 412-***-****</div>
         </div>
     </div>
+    <?php
+        $con = mysql_connect("localhost","root","root");
+        if(!$con)
+        {
+            die('could not connect:' . mysqli_connect_error);
+        }
+        mysql_select_db("E-commerce", $con);
+        
+        $sqlSelectFromPersonal = "SELECT gender,count(*) As sum from personal group by gender";
+        $resultSelectFromPersonal = mysql_query($sqlSelectFromPersonal);
+        $flag = 0;
+        while($row =  mysql_fetch_array($resultSelectFromPersonal)){
+            $genderList[$flag] = $row[gender];
+            $genderNumberList[$flag] = $row[sum];
+            $flag = $flag+1;
+        }
+    ?>
     <script>
 
 		var pieData = [
 				{
-					value: 300,
+					value: <?php echo $genderNumberList[0];?>,
 					color:"#F7464A",
 					highlight: "#FF5A5E",
-					label: "Red"
+					label: "<?php echo $genderList[0];?>"
 				},
 				{
-					value: 50,
+					value: <?php echo $genderNumberList[1];?>,
 					color: "#46BFBD",
 					highlight: "#5AD3D1",
-					label: "Green"
-				},
-				{
-					value: 100,
-					color: "#FDB45C",
-					highlight: "#FFC870",
-					label: "Yellow"
-				},
-				{
-					value: 40,
-					color: "#949FB1",
-					highlight: "#A8B3C5",
-					label: "Grey"
-				},
-				{
-					value: 120,
-					color: "#4D5360",
-					highlight: "#616774",
-					label: "Dark Grey"
+					label: "<?php echo $genderList[1];?>"
 				}
 
 			];
 
 			window.onload = function(){
-				var ctx = document.getElementById("chart-area").getContext("2d");
+				var ctx = document.getElementById("gender").getContext("2d");
 				window.myPie = new Chart(ctx).Pie(pieData);
 			};
 
