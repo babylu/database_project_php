@@ -47,17 +47,7 @@ and open the template in the editor.
                 </div>
 <!--        show view inventory part     -->
 <div id="viewOption">
-            <div class="search">
-               
-   
-                <label style="margin-left: 15px;">Find product information</label>
-                                <div class="searchPro" >
-                                    <input type="text" name="product_name" value="" placeholder=" Type product name">
-                                    <button class="buttonStyle">Search </button>
-                                </div>
-                    
-             
-            </div>
+            
                 <div class="showForm">
                     <center>
                         <table class="viewTable">
