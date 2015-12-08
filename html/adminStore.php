@@ -19,6 +19,8 @@ and open the template in the editor.
             <img class="title" alt="title" src="../img/title.jpg">
             <div class="option">
                 <div id="username" class="username"><a href="./logIn.php">Log Out</a></div>
+                <input id="searchInput" type="text" placeholder=" search" style='font-size:13px;'>
+                <img id="searchIcon" alt="searchIcon" src="../img/searchIcon20.jpeg">
             </div>            
         </div>
         <div class="body">
@@ -38,22 +40,12 @@ and open the template in the editor.
                     <div id="navHead" class="navHead" style="display:block">
                     <input type="radio" name="StoreOption" id="view" value="view" checked="">View
                     <input type="radio" name="StoreOption" id="add" value="add">Add
-                    <input type="radio" name="StoreOption" id="modify" value="modify">Modify
+                    
                 </div>
                 </div>
 <!--            show view store part-->
                 <div id="viewOption">
-                <div class="search">
-               
-   
-                <label style="margin-left: 15px;">Find store information</label>
-                                <div class="searchStore" >
-                                    <input type="text" name="store_id" value="" placeholder=" Type store ID" >
-                                    <button class="buttonStyle">Search </button>
-                                </div>
-                    
-             
-            </div>
+                
                 <div class="showForm">                                      
                     <center>
                         <table class="viewTable">
@@ -161,13 +153,24 @@ and open the template in the editor.
                 <div class="showTable">
                      
                          <center>
-                <form name="getStore" action="" method="POST">
+                             <form name="getStore" action="../php/addstore.php" method="POST">
                     <table class="viewTable">
                         <tr>
                             <td>
                                 <label>Region ID:</label>
                                     <select name="region_id" style="width:80px;">
-                                        <option></option>
+                                       <?PHP
+                                    $con = mysql_connect("localhost","root","root");
+                                    if (!$con){
+                                        die('Could not connect: ' . mysql_error());
+                                }
+                                    mysql_select_db("E-commerce", $con);
+                                    $sql="select region_id from region";
+                                    $result=  mysql_query($sql);
+                                    while($row=  mysql_fetch_array($result)){
+                                        echo "<option>".$row[region_id]."<option>";
+                                    }
+                                        ?>
                                     </select>
                                     </td>
                             <td>
@@ -189,9 +192,20 @@ and open the template in the editor.
                                 <input type="text" name="zipcode" value=""></br>
                                     </td>
                                     <td>
-                                <label>Manager ID:</label>
+                                        <label>Manager ID:</label>
                                     <select name="manager_id" style="width:80px;">
-                                        <option></option>
+                                       <?PHP
+                                    $con = mysql_connect("localhost","root","root");
+                                    if (!$con){
+                                        die('Could not connect: ' . mysql_error());
+                                }
+                                    mysql_select_db("E-commerce", $con);
+                                    $sql="select salesperson_id from store";
+                                    $result=  mysql_query($sql);
+                                    while($row=  mysql_fetch_array($result)){
+                                        echo "<option>".$row[store_id]."<option>";
+                                    }
+                                        ?>
                                     </select>
                                     </td>
                                 </tr>
@@ -208,82 +222,8 @@ and open the template in the editor.
                              </center>
                 </div>
             </div>
-<!--                show modify store part-->
-            <div id="modifyOption">
-                <div class="search">
-               
-   
-                <label style="margin-left: 15px;">Find store information</label>
-                                <div class="searchStore" >
-                                    <input type="text" name="store_id" value="" placeholder=" Type store ID" >
-                                    <button class="buttonStyle">Search </button>
-                                </div>
-                    
-             
-            </div>
-                <div class="showForm">
 
-                    <center>
-                        <table class="viewTable">
-                            
-                            <thead>
-                                <tr>
-                                    <th >Store ID</th>
-                                    
-                                    <th >Street</th>
-                                    <th >City</th>
-                                    <th >State</th>
-                                    <th >Zip Code</th>
-                                   
-                                    <th >Manager ID</th>
-                                    <th >Total Employee</th>
-                                    <th >Region ID</th>
-                                    <th >Modify</th>
-                                    
-                                </tr>
-                            </thead>
-                            <form name="modifyStore" action="" method="POST">
-                            <tr>
-                                <td>
-                                    <label>01</label>
-                                </td>                               
-                                <td>
-                                    <input type="text" name="address_street" value="3162 Bohem St" style="width: 90px;">
-                                </td>
-                                <td>
-                                    <input type="text" name="address_city" value="Pittsburgh" style="width: 60px;">
-                                </td>
-                                <td>
-                                    <input type="text" name="address_state" value="PA" style="width: 30px;">
-                                </td>
-                                <td>
-                                    <input type="text" name="address_zipcode" value="15213" style="width: 60px;">
-                                </td>                            
-                                <td>
-                                    <input type="text" name="manager_id" value="21" style="width: 30px;">
-                                </td>
-                                <td>
-                                    <label>1</label>
-                                </td>
-                                <td>
-                                    <select name="region_id" style="width:50px;">
-                                        <option value ="01">01</option>
-                                    </select>
-                                </td>  
-                                <td>
-                                        <button type="submit" value="change" style="width:50px; height:20px;">change</button>
-                                    </td>
-                            </tr>
-                            </form>
-                            <tbody>                                    
-                            </tbody>
-                        </table>
-                       
-                    </center>
-                
-                    
-                </div>
-            </div>
+            
 </div>
         <div class="footer">
             <div>Copyright &copy; Delicious Dessert Inc. All Right Reserved.</div>

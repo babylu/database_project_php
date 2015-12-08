@@ -38,26 +38,70 @@ and open the template in the editor.
                
                <div class="aggregation">
                    <fieldset>
-                       <legend>Aggregation</legend> 
+                       <legend>Aggregation</legend>
+                       <?php
+                            $con = mysql_connect("localhost","root","root");
+                            if (!$con){
+                                die('Could not connect: ' . mysql_error());
+                            }
+                            mysql_select_db("E-commerce", $con);
+                            $result = mysql_query("select SUM(product_price) from transaction;");
+                            while($row = mysql_fetch_array($result)){
+                                $sum = htmlentities($row["SUM(product_price)"]);
+                            }
+                            $result1 = mysql_query("select P.kind
+                                                    from transaction T natural join product P 
+                                                    group by P.kind 
+                                                    having sum(product_price) >= any(
+                                                        select sum(product_price) 
+                                                        from transaction T natural join product P 
+                                                        group by P.kind);");
+                            while($row = mysql_fetch_array($result1)){
+                                $topKind = htmlentities($row["kind"]);
+                            }
+                            $result2 = mysql_query("SELECT R.name
+                                                    FROM  transaction T, salesperson SA, store ST, region R
+                                                    where T.salesperson_id = SA.salesperson_id and SA.store_id = ST.store_id and ST.region_id = R.region_id 
+                                                    group by R.region_id
+                                                    HAVING sum(product_price) >= ANY(
+                                                        select sum(product_price) 
+                                                        FROM transaction T, salesperson SA, store ST, region R
+                                                        where T.salesperson_id = SA.salesperson_id and SA.store_id = ST.store_id and ST.region_id = R.region_id 
+                                                    );");
+                            while($row = mysql_fetch_array($result2)){
+                                $topRegion = htmlentities($row["name"]);
+                            }
+                            $result3 = mysql_query("SELECT name, sum(product_price)
+                                                    FROM customer natural join transaction T
+                                                    WHERE customer_id in (
+                                                            SELECT customer_id FROM business)
+                                                    GROUP BY customer_id
+                                                    HAVING sum(product_price) >= ANY(
+                                                            select sum(product_price) from transaction GROUP BY customer_id);");
+                            while($row = mysql_fetch_array($result3)){
+                                $topBusiness = htmlentities($row["name"]);
+                            }
+                            $con=null;
+                       ?>
                        <form>
 <!--         Example for how to show data from database to a label in php
                                 <label for="name"><?php echo $name; ?></label>-->
                    <ul>
                    <li>
                        <strong>Total</strong> profit of the products: 
-                       <label class="showLabel">$8888</label>
+                       <label class="showLabel">$<?php echo $sum ?></label>
                    </li>
                    <li>
                        <strong>Top</strong> product categories:
-                       <label class="showLabel">Cake</label>
+                       <label class="showLabel"><?php echo $topKind ?></label>
                    </li>
                    <li>
                        <strong>Top</strong> region:
-                       <label class="showLabel">Pittsburgh Area</label>
+                       <label class="showLabel"><?php echo $topRegion ?></label>
                    </li>
                    <li>
                        <strong>Top</strong> business:
-                       <label class="showLabel">UPMC</label>
+                       <label class="showLabel"><?php echo $topBusiness ?></label>
                    </li>
                </ul>
                </form>

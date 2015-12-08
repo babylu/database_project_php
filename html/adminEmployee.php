@@ -20,6 +20,8 @@ and open the template in the editor.
             <img class="title" alt="title" src="../img/title.jpg">
             <div class="option">
                 <div id="logout" class="username"><a href="./logIn.php">Log Out</a></div>
+                <input id="searchInput" type="text" placeholder=" search" style='font-size:13px;'>
+                <img id="searchIcon" alt="searchIcon" src="../img/searchIcon20.jpeg">
             </div>            
         </div>
         <div class="body">
@@ -41,18 +43,12 @@ and open the template in the editor.
                 <div id="navHead" class="navHead" style="display:block">
                     <input type="radio" name="EmpOption" id="view" value="view" checked="">View
                     <input type="radio" name="EmpOption" id="add" value="add">Add
-                    <input type="radio" name="EmpOption" id="modify" value="modify">Modify
+                    
                 </div>
                 
 <!--                show view employee part-->
                 <div id="viewOption" >
-            <div class="search">
-                    <label style="margin-left: 15px;">Find Employee information</label>
-                                <div class="searchEmp" >
-                                    <input type="text" name="employee_name" value="" placeholder=" Type employee name">
-                                    <button class="buttonStyle">Search </button>
-                                </div>
-            </div>
+            
                 <div class="showForm">
                     
                     <center>
@@ -116,7 +112,7 @@ and open the template in the editor.
     <div class="showTable">
                      
                          <center>
-                <form name="getemployee" action="" method="POST">
+                             <form name="getemployee" action="../php/addemployee.php" method="POST">
                     <table class="viewTable">
                         <tr>
                             <td>
@@ -158,7 +154,18 @@ and open the template in the editor.
                                     <td>
                                 <label>Store Region:</label>
                                     <select name="store_region" style="width:80px;">
-                                        <option></option>
+                                        <?PHP
+                                    $con = mysql_connect("localhost","root","root");
+                                    if (!$con){
+                                        die('Could not connect: ' . mysql_error());
+                                }
+                                    mysql_select_db("E-commerce", $con);
+                                    $sql="select store_id from store";
+                                    $result=  mysql_query($sql);
+                                    while($row=  mysql_fetch_array($result)){
+                                        echo "<option>".$row[store_id]."<option>";
+                                    }
+                                        ?>
                                     </select>
                                     </td>
                                 </tr>
@@ -174,86 +181,8 @@ and open the template in the editor.
                    
                 </div>
 </div>
-<!--                show modify employee part-->
-<div id="modifyOption" >
-    <div class="search">
-                    <label style="margin-left: 15px;">Find Employee information</label>
-                                <div class="searchEmp" >
-                                    <input type="text" name="employee_name" value="" placeholder=" Type employee name">
-                                    <button class="buttonStyle">Search </button>
-                                </div>
-            </div>
-    <div class="showForm">
-                    
-                    <center>
-                        <table class="viewTable">
-                            
-                            <thead>
-                                <tr>
-                                    <th >Email</th>
-                                    <th >Name</th>
-                                    <th >Street</th>
-                                    <th >City</th>
-                                    <th >State</th>
-                                    <th >Zip Code</th>
-                                   
-                                    <th >Salary</th>
-                                    <th >Job Title</th>
-                                    <th >Store</th>
-                                    <th >Modify</th>
-                                    
-                                </tr>
-                            </thead>
-                            <form name="modifyEmployee" action="" method="POST">
-                            <tr>
-                                <td>
-                                    <label>xil129@pitt.edu</label>
-                                </td>
-                                <td>
-                                    <input type="text" value="Ivy" name="name" style="width: 30px;">
-                                </td>
-                                
-                                <td>
-                                    <input type="text" name="address_street" value="3162 Bohem ST" style="width: 90px;">
-                                </td>
-                                <td>
-                                    <input type="text" name="address_city" value="Pittsburgh" style="width: 60px;">
-                                </td>
-                                <td>
-                                    <input type="text" name="address_state" value="PA" style="width: 20px;">
-                                </td>
-                                <td>
-                                    <input type="text" name="address_zipcode" value="15213" style="width: 40px;">
-                                </td>
-                             
-                                <td>
-                                    <input type="text" name="salary" value="$34" style="width: 30px;">
-                                </td>
-                                <td>
-                                    <input type="text" name="job_title" value="Student" style="width: 50px;">
-                                </td>
-                                <td>
-                               
-                                    <select name="store_region" style="width:80px;">
-                                        <option value ="Pittsburgh Area">Pittsburgh Area</option>
-                                    </select>
-                                    </td>
-                                    <td>
-                                        <button type="submit" value="change" style="width:50px; height:20px;">change</button>
-                                    </td>
-                                
-                                
-                            </tr>
-                            </form>
-                        </table>
-                        
-                       
-                    </center>
-        
-                 
-                    
-                </div>
-</div>
+
+
 </div>
         <div class="footer">
             <div>Copyright &copy; Delicious Dessert Inc. All Right Reserved.</div>
