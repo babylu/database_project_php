@@ -47,17 +47,7 @@ and open the template in the editor.
                 </div>
 <!--        show view inventory part     -->
 <div id="viewOption">
-            <div class="search">
-               
-   
-                <label style="margin-left: 15px;">Find product information</label>
-                                <div class="searchPro" >
-                                    <input type="text" name="product_name" value="" placeholder=" Type product name">
-                                    <button class="buttonStyle">Search </button>
-                                </div>
-                    
-             
-            </div>
+            
                 <div class="showForm">
                     <center>
                         <table class="viewTable">
@@ -176,7 +166,7 @@ and open the template in the editor.
                                     
                                 </tr>
                             </thead>
-                            <form name="addInventory" action="../php/modifyproduct.php" method="POST">
+                            
                             <?php
                             $con = mysql_connect("localhost","root","root");
                             if (!$con){
@@ -185,33 +175,30 @@ and open the template in the editor.
                             mysql_select_db("e-commerce", $con);
                             $result = mysql_query("select * from product");
                             while ($row = mysql_fetch_array($result)) {
+                                echo "<form name='addInventory' action='../php/modifyproduct.php' method='POST'>";
                                 echo"<tr><td>
                                     <label id='productId'>".htmlentities($row[product_id])." </label>
-                                    <input type='hidden' name='id' value=".htmlentities($row[product_id]).">
+                                    <input type='hidden' name='id' value='".htmlentities($row[product_id])."'>
                                 </td>";
-                                echo"<td><input type='text' name='name' value='Cheesecake' style='width: 80px;'>
-                                </td>
+                                echo"<td><input type='text' name='name' value='" .htmlentities($row[name]). "' style='width: 80px;' required>
+                                </td>";
+                                echo"<td><input type='text' name='amount' value='" .htmlentities($row[amount]). "' style='width: 80px;' required>
+                                </td>";
+                                echo"
                                 <td>
-                                    <input type='text' name='amount' value='' style='width: 30px;'>
-                                </td>
-                                <td>
-                                    <input type='text' name='price' value='' style='width: 30px;'>
-                                </td>
-                                <td>
-                                    <select name='Category' style='width:80px;'>
-                                        <option value='cake'>Cake</option>
-                                    </select>
-                                </td>
-                                <td>
+                                    <input type='text' name='price' value='".htmlentities($row[price])."' style='width: 30px;' required>
+                                </td>";
+                                
+                                echo"<td>
                                         <button type='submit' value='change' style='width:50px; height:20px;'>change</button>
                                     </td> ";
-                                echo"</tr>";
+                                echo"</tr></form>";
                             }
                                   ?>
                                 
                                                        
                             
-                            </form>
+                            
                           
                         </table>
                         

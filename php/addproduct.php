@@ -10,7 +10,8 @@
                     die('Could not connect: ' . mysql_error());
  }
                 mysql_select_db("e-commerce", $con);
-                
+                $referer="http://localhost:8888/database_project_php/html/adminStock.php";
+                if(intval($_POST[amount])>0&&intval($_POST[price])>0){
                 $product_id=date(ymdhis);
                 
                 $sql="INSERT INTO product (product_id,name,amount,price,kind)"
@@ -22,6 +23,9 @@
                    echo "<script>alert('product added failed'".mysql_error().");</script>";
                    echo "<script>window.history.go(-1);</script>";
                 }
-                
+                }else{
+                    echo"<script>alert('please provide with correct data');</script>";
+                    echo  "<script>alert(\"" . mysqli_error($con) . "\");window.location.href=\"" . $referer . "\";</script>";
+                }
                    
 ?>
