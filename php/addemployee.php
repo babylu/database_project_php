@@ -24,12 +24,12 @@ if($_POST[salesman_name]==''){
     echo "<script>window.history.go(-1);</script>";
     exit();
 }
-if(preg_match("/d{5}/",$_POST[zipcode]) == 1){
+if(preg_match("/[0-9]+/",$_POST[zipcode]) == 1 && strlen($_POST[zipcode])!=5){
     echo "<script>alert('Zipcode input error!');</script>";
     echo "<script>window.history.go(-1);</script>";
     exit();
 }
-if(preg_match("/d{10}/",$_POST[salary]) == 1){
+if(preg_match("/[0-9]+/",$_POST[salary]) == 1 && strlen($_POST[zipcode])!=10){
     echo "<script>alert('Salary input error!');</script>";
     echo "<script>window.history.go(-1);</script>";
     exit();
